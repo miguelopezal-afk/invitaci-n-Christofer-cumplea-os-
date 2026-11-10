@@ -53,8 +53,21 @@ export default function Invitation({ content }: { content: Content }) {
           </div>
         </section>
 
+        {/* EL CUENTO · prólogo ---------------------------------------- */}
+        <div id="historia" />
+        {t.story1 && (
+          <section className="bg-sky/30 px-6 py-20">
+            <Reveal className="mx-auto max-w-md text-center">
+              {t.storyEyebrow && <p className="font-serif text-2xl italic text-golddeep">{t.storyEyebrow}</p>}
+              {t.storyTitle && <h2 className="section-title mt-3">{t.storyTitle}</h2>}
+              <Divider className="my-7" />
+              <Story text={t.story1} dropCap />
+            </Reveal>
+          </section>
+        )}
+
         {/* 2 · LOS PRIMEROS AÑOS -------------------------------------- */}
-        <section id="historia" className="scroll-mt-0 bg-cream px-5 py-20">
+        <section className="bg-cream px-5 py-20">
           <Reveal className="mx-auto max-w-xl text-center">
             <p className="eyebrow">Los primeros años</p>
             <h2 className="section-title mt-3">{t.earlyTitle}</h2>
@@ -74,6 +87,11 @@ export default function Invitation({ content }: { content: Content }) {
             <Divider className="my-6" />
             <p className="lead">{t.growingText}</p>
           </Reveal>
+          {t.story2 && (
+            <Reveal className="mx-auto mt-12 max-w-md px-6">
+              <Story text={t.story2} framed />
+            </Reveal>
+          )}
 
           <ol className="relative mx-auto mt-14 max-w-2xl">
             <span className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-gold/50" aria-hidden="true" />
@@ -114,6 +132,11 @@ export default function Invitation({ content }: { content: Content }) {
           <Reveal className="mt-10">
             <Carousel photos={current} label="Fotografías de su etapa actual" />
           </Reveal>
+          {t.story3 && (
+            <Reveal className="mx-auto mt-14 max-w-md px-6">
+              <Story text={t.story3} framed />
+            </Reveal>
+          )}
           <Reveal className="mx-auto mt-12 flex max-w-xs flex-col items-center px-5 text-center">
             <WhiteCoat className="h-36 w-auto" />
             {t.dreamsNote && <p className="mt-4 font-serif text-lg italic text-navy/70">{t.dreamsNote}</p>}
@@ -195,6 +218,24 @@ export default function Invitation({ content }: { content: Content }) {
         </section>
       </main>
     </LightboxProvider>
+  )
+}
+
+/** Pasaje del cuento, con letra capital opcional. */
+function Story({ text, dropCap = false, framed = false }: { text: string; dropCap?: boolean; framed?: boolean }) {
+  return (
+    <div className={framed ? 'border-y border-gold/60 py-7' : ''}>
+      {framed && <Sparkle className="mx-auto mb-4 h-3 w-3 text-gold" />}
+      <p
+        className={`whitespace-pre-line font-serif text-[1.3rem] italic leading-relaxed text-navy/85 ${
+          dropCap
+            ? 'text-left first-letter:float-left first-letter:mr-2 first-letter:font-display first-letter:text-[3.6rem] first-letter:not-italic first-letter:leading-[0.8] first-letter:text-golddeep'
+            : 'text-center'
+        }`}
+      >
+        {text}
+      </p>
+    </div>
   )
 }
 
