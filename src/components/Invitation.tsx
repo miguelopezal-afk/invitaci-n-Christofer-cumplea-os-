@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CalendarDays, Check, ChevronDown, Clock, MapPin, Navigation, Share2 } from 'lucide-react'
 import { bySection, type Content } from '../lib/types'
-import { Album, Caption, Carousel, LightboxProvider, PhotoFrame } from './Gallery'
+import { Caption, Carousel, LightboxProvider, PhotoFrame } from './Gallery'
 import { Divider, Reveal, Sparkle, WhiteCoat } from './ui'
 
 /** La invitación completa. Recibe todo su contenido por props (content.json). */
@@ -74,8 +74,8 @@ export default function Invitation({ content }: { content: Content }) {
             <Divider className="my-6" />
             <p className="lead">{t.earlyText}</p>
           </Reveal>
-          <Reveal className="mt-12">
-            <Album photos={early} />
+          <Reveal className="-mx-5 mt-10">
+            <Carousel photos={early} label="Fotografías de sus primeros años" />
           </Reveal>
         </section>
 

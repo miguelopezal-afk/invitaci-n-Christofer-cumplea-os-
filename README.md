@@ -122,6 +122,6 @@ editor.html                editor local (no se publica)
 public/photos/             fotografías que usa la invitación
 public/og-image.png        portada para WhatsApp
 src/content/content.json   configuración: nombre, edad, evento, textos, fotografías y su orden
-src/components/            Invitation (6 secciones), Gallery (álbum, carrusel, pantalla completa), ui
+src/components/            Invitation (6 secciones), Gallery (carrusel, pantalla completa), ui
 src/editor/                editor de fotografías y exportación ZIP
 ```
