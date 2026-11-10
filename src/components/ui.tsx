@@ -68,7 +68,7 @@ export function WhiteCoat({ className = '' }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       role="img"
-      aria-label="Illustration of a white coat with a stethoscope"
+      aria-label="Ilustración de una bata blanca con estetoscopio"
     >
       <g stroke="#183153" strokeWidth="1.6">
         <path

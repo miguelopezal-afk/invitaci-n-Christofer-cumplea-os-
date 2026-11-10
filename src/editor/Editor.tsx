@@ -32,12 +32,12 @@ import {
 const { photos: _demo, ...baseContent } = raw as Content
 const initial: EditorState = { content: baseContent, photos: [] }
 
-/** Un borrador o ZIP anterior a la versión en inglés (sin los textos de compartir). */
-const isOld = (s: EditorState) => !s.content?.texts || !('shareTitle' in s.content.texts)
+/** Un borrador o ZIP guardado con una versión anterior de los textos (content.json → version). */
+const isOld = (s: EditorState) => !s.content?.texts || (s.content.version ?? 0) < (baseContent.version ?? 0)
 
 /**
  * Pone al día un borrador o ZIP guardado con una versión anterior del proyecto:
- * conserva las fotografías y, si es anterior a la versión en inglés, toma los textos
+ * conserva las fotografías y, si los textos son de una versión anterior, toma los
  * actuales; si no, solo completa los textos que aún no existían.
  */
 const upgrade = (s: EditorState): EditorState =>
@@ -46,7 +46,7 @@ const upgrade = (s: EditorState): EditorState =>
     : { ...s, content: { ...s.content, texts: { ...baseContent.texts, ...s.content.texts } } }
 
 const OLD_NOTICE =
-  'Este álbum era anterior a la versión en inglés: se conservaron las fotografías y se cargaron los textos y datos actuales.'
+  'Este álbum se guardó con una versión anterior de los textos: se conservaron las fotografías y se cargaron los textos y datos actuales.'
 
 const TEXT_LABELS: Record<string, string> = {
   heroTitle: 'Portada · título',

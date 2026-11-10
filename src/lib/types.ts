@@ -34,6 +34,8 @@ export interface TimelineGroup {
 }
 
 export interface Content {
+  /** Versión de los textos; el editor la usa para detectar borradores y ZIP antiguos. */
+  version?: number
   celebrant: { name: string; firstName: string; age: number }
   event: { type: string; dateLabel: string; time: string; venue: string; address: string }
   texts: Record<string, string>

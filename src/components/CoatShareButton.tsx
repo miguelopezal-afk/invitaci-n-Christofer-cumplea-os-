@@ -99,7 +99,7 @@ export function CoatShareButton({ label, message, caption }: { label: string; me
 
       <span className="mt-4 inline-flex items-center gap-2 border-b border-gold pb-1.5 font-sans text-sm font-medium tracking-wide transition-colors duration-200 group-hover:border-navy">
         <span className="text-balance text-center">{label}</span>
-        <span className="sr-only"> (opens WhatsApp)</span>
+        <span className="sr-only"> (se abre WhatsApp)</span>
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
