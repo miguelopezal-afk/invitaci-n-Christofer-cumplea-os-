@@ -43,20 +43,166 @@
     }
   ],
   "photos": [
-    { "id": "d01", "src": "photos/demo-01.svg", "section": "portada", "width": 900, "height": 1200 },
-    { "id": "d02", "src": "photos/demo-02.svg", "section": "primeros", "width": 900, "height": 1200, "title": "Fotografía de demostración", "dedication": "Aquí irá una dedicatoria corta." },
-    { "id": "d03", "src": "photos/demo-03.svg", "section": "primeros", "width": 1000, "height": 1000 },
-    { "id": "d04", "src": "photos/demo-04.svg", "section": "primeros", "width": 1200, "height": 900 },
-    { "id": "d05", "src": "photos/demo-05.svg", "section": "primeros", "width": 900, "height": 1200 },
-    { "id": "d06", "src": "photos/demo-06.svg", "section": "infancia", "width": 900, "height": 1200, "title": "Fotografía de demostración" },
-    { "id": "d07", "src": "photos/demo-07.svg", "section": "infancia", "width": 1200, "height": 900 },
-    { "id": "d08", "src": "photos/demo-08.svg", "section": "infancia", "width": 1000, "height": 1000 },
-    { "id": "d09", "src": "photos/demo-09.svg", "section": "adolescencia", "width": 1200, "height": 900 },
-    { "id": "d10", "src": "photos/demo-10.svg", "section": "adolescencia", "width": 900, "height": 1200 },
-    { "id": "d11", "src": "photos/demo-11.svg", "section": "adolescencia", "width": 1000, "height": 1000 },
-    { "id": "d12", "src": "photos/demo-12.svg", "section": "actual", "width": 900, "height": 1200 },
-    { "id": "d13", "src": "photos/demo-13.svg", "section": "actual", "width": 1200, "height": 900 },
-    { "id": "d14", "src": "photos/demo-14.svg", "section": "actual", "width": 900, "height": 1200 },
-    { "id": "d15", "src": "photos/demo-15.svg", "section": "final", "width": 900, "height": 1200 }
+    {
+      "id": "bcae27",
+      "src": "photos/foto-01-bcae27.webp",
+      "section": "portada",
+      "width": 750,
+      "height": 1105
+    },
+    {
+      "id": "4c3d02",
+      "src": "photos/foto-02-4c3d02.webp",
+      "section": "primeros",
+      "width": 560,
+      "height": 380
+    },
+    {
+      "id": "7a768d",
+      "src": "photos/foto-03-7a768d.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 563
+    },
+    {
+      "id": "f33149",
+      "src": "photos/foto-04-f33149.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 563
+    },
+    {
+      "id": "2b57f5",
+      "src": "photos/foto-05-2b57f5.webp",
+      "section": "primeros",
+      "width": 616,
+      "height": 820
+    },
+    {
+      "id": "343150",
+      "src": "photos/foto-06-343150.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 1268
+    },
+    {
+      "id": "715f54",
+      "src": "photos/foto-07-715f54.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 1246
+    },
+    {
+      "id": "4a6aba",
+      "src": "photos/foto-08-4a6aba.webp",
+      "section": "primeros",
+      "width": 674,
+      "height": 497
+    },
+    {
+      "id": "4cafdf",
+      "src": "photos/foto-09-4cafdf.webp",
+      "section": "primeros",
+      "width": 616,
+      "height": 491
+    },
+    {
+      "id": "4c0060",
+      "src": "photos/foto-10-4c0060.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 1112
+    },
+    {
+      "id": "02f81e",
+      "src": "photos/foto-11-02f81e.webp",
+      "section": "infancia",
+      "width": 1024,
+      "height": 681
+    },
+    {
+      "id": "b1fe30",
+      "src": "photos/foto-12-b1fe30.webp",
+      "section": "infancia",
+      "width": 719,
+      "height": 1280
+    },
+    {
+      "id": "bcb5e7",
+      "src": "photos/foto-13-bcb5e7.webp",
+      "section": "infancia",
+      "width": 719,
+      "height": 995
+    },
+    {
+      "id": "8bf873",
+      "src": "photos/foto-14-8bf873.webp",
+      "section": "infancia",
+      "width": 719,
+      "height": 1230
+    },
+    {
+      "id": "54174c",
+      "src": "photos/foto-15-54174c.webp",
+      "section": "infancia",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "85bfaf",
+      "src": "photos/foto-16-85bfaf.webp",
+      "section": "adolescencia",
+      "width": 591,
+      "height": 920
+    },
+    {
+      "id": "257d9f",
+      "src": "photos/foto-17-257d9f.webp",
+      "section": "adolescencia",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "ada81a",
+      "src": "photos/foto-18-ada81a.webp",
+      "section": "adolescencia",
+      "width": 514,
+      "height": 703
+    },
+    {
+      "id": "0d2af1",
+      "src": "photos/foto-19-0d2af1.webp",
+      "section": "actual",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "id": "30b506",
+      "src": "photos/foto-20-30b506.webp",
+      "section": "actual",
+      "width": 580,
+      "height": 970
+    },
+    {
+      "id": "1b7a88",
+      "src": "photos/foto-21-1b7a88.webp",
+      "section": "actual",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "ef7836",
+      "src": "photos/foto-22-ef7836.webp",
+      "section": "actual",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "7ade4b",
+      "src": "photos/foto-23-7ade4b.webp",
+      "section": "final",
+      "width": 960,
+      "height": 1280
+    }
   ]
 }
