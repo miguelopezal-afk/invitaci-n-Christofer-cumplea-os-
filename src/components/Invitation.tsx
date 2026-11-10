@@ -17,12 +17,17 @@ export default function Invitation({ content }: { content: Content }) {
   const whatsappLabel = (t.whatsappButton ?? 'Compartir por WhatsApp').trim()
   // El cuento puede ir en un idioma distinto al del resto de la página (p. ej. "es").
   const storyLang = t.storyLang?.trim() || undefined
+  // Lo mismo para la portada.
+  const heroLang = t.heroLang?.trim() || undefined
 
   return (
     <LightboxProvider>
       <main className="overflow-x-hidden">
         {/* 1 · PORTADA ------------------------------------------------ */}
-        <section className="relative flex min-h-[100svh] flex-col items-center justify-center bg-white px-6 pb-14 pt-12 text-center">
+        <section
+          lang={heroLang}
+          className="relative flex min-h-[100svh] flex-col items-center justify-center bg-white px-6 pb-14 pt-12 text-center"
+        >
           <div className="pointer-events-none absolute inset-3 border border-gold/50" aria-hidden="true" />
           <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-sky/50 to-transparent" aria-hidden="true" />
           <Sparkle className="absolute left-[12%] top-[9%] h-4 w-4 text-gold" />
@@ -31,7 +36,7 @@ export default function Invitation({ content }: { content: Content }) {
           <Sparkle className="absolute left-[20%] top-[19%] h-2 w-2 text-sky" />
 
           <div className="relative w-full max-w-md">
-            <p className="eyebrow">{event.type}</p>
+            <p className="eyebrow">{t.heroEyebrow?.trim() || event.type}</p>
             <p
               className="mt-2 font-display text-[clamp(7rem,38vw,11rem)] leading-[0.9] text-gold"
               aria-hidden="true"

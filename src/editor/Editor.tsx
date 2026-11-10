@@ -49,6 +49,8 @@ const OLD_NOTICE =
   'Este álbum se guardó con una versión anterior de los textos: se conservaron las fotografías y se cargaron los textos y datos actuales.'
 
 const TEXT_LABELS: Record<string, string> = {
+  heroEyebrow: 'Portada · línea superior',
+  heroLang: 'Portada · idioma (código: es, en…)',
   heroTitle: 'Portada · título',
   heroSubtitle: 'Portada · subtítulo',
   heroButton: 'Portada · botón',
