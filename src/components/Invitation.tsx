@@ -97,15 +97,12 @@ export default function Invitation({ content }: { content: Content }) {
             {timeline.map((group) => {
               const list = bySection(photos, group.section)
               if (!list.length && !group.description) return null
-              // Si la primera fotografía es horizontal, se muestra grande; el resto, en dos columnas.
-              const lead = list.length > 2 && list[0].width > list[0].height ? list.slice(0, 1) : []
-              const rest = list.slice(lead.length)
               return (
                 <li key={group.section}>
                   <Reveal>
                     <div className="text-center">
-                      <span className="mx-auto block h-14 w-px bg-gold/60" aria-hidden="true" />
-                      <span className="mx-auto my-4 block h-2.5 w-2.5 rotate-45 bg-gold" aria-hidden="true" />
+                      <span className="grow-line mx-auto block h-14 w-px bg-gold/60" aria-hidden="true" />
+                      <span className="pop-in mx-auto my-4 block h-2.5 w-2.5 rotate-45 bg-gold" aria-hidden="true" />
                       {group.label && <p className="eyebrow mb-1">{group.label}</p>}
                       <h3 className="font-display text-[1.7rem] text-navy">{group.title}</h3>
                       {group.description && (
@@ -114,9 +111,8 @@ export default function Invitation({ content }: { content: Content }) {
                         </p>
                       )}
                     </div>
-                    <div className="mt-7 space-y-5 px-5 pb-10">
-                      {lead.length > 0 && <PhotoFrame photos={list} index={0} className="mx-auto max-w-2xl px-1" />}
-                      <Album photos={rest} tilt={false} offset={lead.length} all={list} />
+                    <div className="mt-5 pb-10">
+                      <Carousel photos={list} label={`Fotografías: ${group.title}`} />
                     </div>
                   </Reveal>
                 </li>

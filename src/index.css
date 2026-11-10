@@ -53,6 +53,44 @@
   opacity: 1;
   transform: none;
 }
+/* Línea del tiempo: la línea se dibuja y el rombo aparece al llegar a cada etapa */
+.reveal .grow-line {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.8s ease 0.1s;
+}
+.reveal.is-in .grow-line {
+  transform: none;
+}
+.reveal .pop-in {
+  opacity: 0;
+  scale: 0.2;
+  transition: opacity 0.4s ease 0.7s, scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s;
+}
+.reveal.is-in .pop-in {
+  opacity: 1;
+  scale: 1;
+}
+
+/* Pantalla completa: aparece con un fundido y un leve acercamiento */
+@keyframes lb-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes lb-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+.lb-in {
+  animation: lb-in 0.25s ease both;
+}
+.lb-zoom {
+  animation: lb-zoom 0.35s ease both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -61,6 +99,17 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .reveal .grow-line,
+  .reveal .pop-in {
+    transform: none;
+    opacity: 1;
+    scale: 1;
+    transition: none;
+  }
+  .lb-in,
+  .lb-zoom {
+    animation: none;
   }
 }
 

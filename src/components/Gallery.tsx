@@ -48,7 +48,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
           role="dialog"
           aria-modal="true"
           aria-label="Fotografía en pantalla completa"
-          className="fixed inset-0 z-50 flex flex-col bg-[#0d1c30]/95"
+          className="lb-in fixed inset-0 z-50 flex flex-col bg-[#0d1c30]/95"
           onClick={close}
           onTouchStart={(e) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY })}
           onTouchEnd={(e) => {
@@ -78,7 +78,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
               key={photo.id}
               src={photo.src}
               alt={photo.title || 'Fotografía'}
-              className="max-h-full max-w-full object-contain"
+              className="lb-zoom max-h-full max-w-full object-contain"
               onClick={(e) => e.stopPropagation()}
             />
             {many && (
@@ -152,7 +152,7 @@ export function PhotoFrame({
         type="button"
         onClick={() => open(photos, index)}
         aria-label={`Ampliar fotografía${photo.title ? `: ${photo.title}` : ''}`}
-        className="frame block w-full cursor-zoom-in"
+        className="frame block w-full cursor-zoom-in transition-transform duration-200 active:scale-[0.98]"
       >
         <img
           src={photo.src}
@@ -238,48 +238,99 @@ export function Album({
 
 export function Carousel({ photos, label }: { photos: Photo[]; label: string }) {
   const ref = useRef<HTMLDivElement>(null)
-  if (!photos.length) return null
-  const move = (d: number) => {
+  const [active, setActive] = useState(0)
+
+  // Efecto de foco: la fotografía centrada se ve completa y nítida; las vecinas,
+  // un poco más pequeñas y tenues. Sigue al dedo mientras se desliza.
+  useEffect(() => {
     const el = ref.current
-    if (el) el.scrollBy({ left: d * el.clientWidth * 0.8, behavior: 'smooth' })
-  }
+    if (!el || photos.length < 2) return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    let raf = 0
+    const update = () => {
+      raf = 0
+      const mid = el.scrollLeft + el.clientWidth / 2
+      let best = 0
+      let bestDist = Infinity
+      Array.from(el.children).forEach((child, i) => {
+        const item = child as HTMLElement
+        const dist = Math.abs(item.offsetLeft + item.offsetWidth / 2 - mid)
+        if (dist < bestDist) (bestDist = dist), (best = i)
+        if (reduce) return
+        const t = Math.min(1, dist / el.clientWidth)
+        item.style.transform = `scale(${1 - 0.12 * t})`
+        item.style.opacity = String(1 - 0.4 * t)
+      })
+      setActive(best)
+    }
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update)
+    }
+    update()
+    el.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      cancelAnimationFrame(raf)
+      el.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [photos.length])
+
+  if (!photos.length) return null
   if (photos.length === 1) return <PhotoFrame photos={photos} index={0} className="mx-auto w-[min(78%,20rem)]" />
+
+  const go = (i: number) => {
+    const el = ref.current
+    const item = el?.children[Math.max(0, Math.min(photos.length - 1, i))] as HTMLElement | undefined
+    if (el && item) el.scrollTo({ left: item.offsetLeft - (el.clientWidth - item.offsetWidth) / 2, behavior: 'smooth' })
+  }
+  const arrow =
+    'flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-navy/20 bg-white text-navy transition hover:border-navy active:scale-90 disabled:opacity-30'
+
   return (
     <div role="group" aria-label={label}>
       <div
         ref={ref}
-        className="no-scrollbar flex snap-x snap-mandatory items-center gap-4 overflow-x-auto scroll-smooth py-2"
+        className="no-scrollbar relative flex snap-x snap-mandatory items-center gap-3 overflow-x-auto py-4"
       >
         {photos.map((p, i) => (
           <PhotoFrame
             key={p.id}
             photos={photos}
             index={i}
-            className={`shrink-0 snap-center ${p.width > p.height
+            className={`shrink-0 snap-center will-change-transform ${
+              p.width > p.height
                 ? 'w-[82%] max-w-md first:ml-[9%] last:mr-[9%]'
-                : 'w-[68%] max-w-[19rem] first:ml-[16%] last:mr-[16%]'}`}
+                : 'w-[68%] max-w-[19rem] first:ml-[16%] last:mr-[16%]'
+            }`}
           />
         ))}
       </div>
-      <div className="mt-3 flex items-center justify-center gap-4">
-        <button
-          type="button"
-          onClick={() => move(-1)}
-          aria-label="Fotografías anteriores"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-navy/20 bg-white text-navy hover:border-navy"
-        >
+      <div className="mt-2 flex items-center justify-center gap-4 px-4">
+        <button type="button" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Fotografía anterior" className={arrow}>
           <ChevronLeft className="h-5 w-5" />
         </button>
-        <span className="font-sans text-[0.7rem] uppercase tracking-[0.25em] text-navy/50">Desliza</span>
+        <div className="flex items-center gap-1.5" aria-hidden="true">
+          {photos.map((p, i) => (
+            <span
+              key={p.id}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? 'w-5 bg-gold' : 'w-1.5 bg-navy/20'}`}
+            />
+          ))}
+        </div>
         <button
           type="button"
-          onClick={() => move(1)}
-          aria-label="Fotografías siguientes"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-navy/20 bg-white text-navy hover:border-navy"
+          onClick={() => go(active + 1)}
+          disabled={active === photos.length - 1}
+          aria-label="Fotografía siguiente"
+          className={arrow}
         >
           <ChevronRight className="h-5 w-5" />
         </button>
       </div>
+      <p className="sr-only" aria-live="polite">
+        Fotografía {active + 1} de {photos.length}
+      </p>
     </div>
   )
 }
