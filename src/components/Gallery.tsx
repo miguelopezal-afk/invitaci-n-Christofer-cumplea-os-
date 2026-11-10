@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronsRight, X } from 'lucide-react'
 import type { Photo } from '../lib/types'
 
 /* ------------------------------------------------------------------ */
@@ -175,7 +175,16 @@ export function PhotoFrame({
 /* Carrusel manual (deslizar con el dedo o usar las flechas)            */
 /* ------------------------------------------------------------------ */
 
-export function Carousel({ photos, label }: { photos: Photo[]; label: string }) {
+export function Carousel({
+  photos,
+  label,
+  hint,
+}: {
+  photos: Photo[]
+  label: string
+  /** Aviso pequeño bajo el carrusel, p. ej. "Desliza". */
+  hint?: string
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(0)
 
@@ -267,6 +276,18 @@ export function Carousel({ photos, label }: { photos: Photo[]; label: string }) 
           <ChevronRight className="h-5 w-5" />
         </button>
       </div>
+      {hint && (
+        <p
+          aria-hidden="true"
+          className="mt-3 flex items-center justify-center gap-2 font-sans text-[0.58rem] font-medium uppercase tracking-[0.34em] text-navy/45"
+        >
+          <span className="h-px w-5 bg-gold/70" />
+          {/* el margen negativo compensa el espaciado de la última letra */}
+          <span className="-mr-[0.34em]">{hint}</span>
+          <ChevronsRight className="swipe-hint h-3 w-3 text-golddeep" strokeWidth={1.75} />
+          <span className="h-px w-5 bg-gold/70" />
+        </p>
+      )}
       <p className="sr-only" aria-live="polite">
         Fotografía {active + 1} de {photos.length}
       </p>
