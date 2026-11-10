@@ -99,6 +99,11 @@ export default function Invitation({ content }: { content: Content }) {
               if (!list.length && !group.description) return null
               return (
                 <li key={group.section}>
+                  {group.story && (
+                    <Reveal className="mx-auto max-w-md px-6 pb-8 pt-2">
+                      <Story text={group.story} framed />
+                    </Reveal>
+                  )}
                   <Reveal>
                     <div className="text-center">
                       <span className="grow-line mx-auto block h-14 w-px bg-gold/60" aria-hidden="true" />
