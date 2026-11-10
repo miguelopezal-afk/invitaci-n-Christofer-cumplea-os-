@@ -1,0 +1,276 @@
+{
+  "celebrant": {
+    "name": "Chrystofer Woc",
+    "firstName": "Chrystofer",
+    "age": 22
+  },
+  "event": {
+    "type": "Celebración de cumpleaños",
+    "dateLabel": "Sábado 21 de noviembre de 2026",
+    "time": "",
+    "venue": "Edificio Tiffany II",
+    "address": "13 Calle A 7-35, Zona 10, Ciudad de Guatemala"
+  },
+  "texts": {
+    "heroTitle": "¡Felices 22 años!",
+    "heroSubtitle": "22 años de recuerdos, sueños y momentos inolvidables",
+    "heroButton": "Descubre su historia",
+    "storyEyebrow": "Érase una vez...",
+    "storyTitle": "Esta es la historia de un pequeño niño que soñaba con ser cardiólogo",
+    "story1": "Hace veintidós años, en un reino rodeado de volcanes, nació un pequeño niño de rizos oscuros y sonrisa traviesa. Desde muy pequeño descubrió que el tesoro más valioso del reino no estaba guardado en ningún castillo: latía, escondido, dentro de cada persona.",
+    "story2": "El niño creció entre risas, juegos y aventuras, y con cada año su sueño crecía con él: aprender el lenguaje secreto de los corazones para poder cuidarlos.",
+    "story3": "Con el tiempo, el pequeño soñador emprendió el camino de los sanadores. Estudió con paciencia y valentía, y ya se acerca el día en que recibirá su capa blanca: no la de un mago ni la de un caballero, sino la de quienes eligen cuidar a los demás.\n\nEl cuento aún no termina... el aprendiz de cardiólogo lo sigue escribiendo, latido a latido.",
+    "earlyTitle": "Todo comenzó con un pequeño soñador...",
+    "earlyText": "Hace 22 años comenzó una historia llena de alegría, momentos especiales y sueños que apenas empezaban a descubrirse.",
+    "growingTitle": "Cada año, una nueva aventura",
+    "growingText": "Entre sonrisas, aventuras y momentos inolvidables, cada año fue construyendo la persona que eres hoy.",
+    "dreamsTitle": "Los sueños también crecen",
+    "dreamsText": "Hoy, a tus 22 años, seguimos celebrando cada uno de tus pasos y todos los sueños que están por hacerse realidad.",
+    "dreamsNote": "Una nueva etapa de su formación está por comenzar",
+    "momentText": "De aquel pequeño soñador\nal joven que eres hoy...\n\n22 años de historias, aprendizajes,\nalegrías y sueños por cumplir.\n\nY lo mejor de tu historia\ntodavía está por escribirse.",
+    "momentClosing": "¡Feliz cumpleaños, Chrystofer!",
+    "inviteTitle": "¡Celebremos tus 22 años!",
+    "inviteText": "Queremos compartir contigo una celebración muy especial, llena de alegría y buenos momentos.",
+    "inviteClosing": "¡Tu presencia hará esta celebración aún más especial!"
+  },
+  "timeline": [
+    {
+      "section": "infancia",
+      "label": "",
+      "title": "Infancia",
+      "description": ""
+    },
+    {
+      "section": "adolescencia",
+      "label": "",
+      "title": "Adolescencia",
+      "description": ""
+    }
+  ],
+  "photos": [
+    {
+      "id": "bcae27",
+      "src": "photos/foto-01-bcae27.webp",
+      "section": "portada",
+      "width": 750,
+      "height": 1105
+    },
+    {
+      "id": "4c3d02",
+      "src": "photos/foto-02-4c3d02.webp",
+      "section": "primeros",
+      "width": 560,
+      "height": 380
+    },
+    {
+      "id": "7a768d",
+      "src": "photos/foto-03-7a768d.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 563
+    },
+    {
+      "id": "f33149",
+      "src": "photos/foto-04-f33149.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 563
+    },
+    {
+      "id": "2b57f5",
+      "src": "photos/foto-05-2b57f5.webp",
+      "section": "primeros",
+      "width": 616,
+      "height": 820
+    },
+    {
+      "id": "343150",
+      "src": "photos/foto-06-343150.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 1268
+    },
+    {
+      "id": "715f54",
+      "src": "photos/foto-07-715f54.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 1246
+    },
+    {
+      "id": "4a6aba",
+      "src": "photos/foto-08-4a6aba.webp",
+      "section": "primeros",
+      "width": 674,
+      "height": 497
+    },
+    {
+      "id": "4cafdf",
+      "src": "photos/foto-09-4cafdf.webp",
+      "section": "primeros",
+      "width": 616,
+      "height": 491
+    },
+    {
+      "id": "4c0060",
+      "src": "photos/foto-10-4c0060.webp",
+      "section": "primeros",
+      "width": 750,
+      "height": 1112
+    },
+    {
+      "id": "02f81e",
+      "src": "photos/foto-11-02f81e.webp",
+      "section": "infancia",
+      "width": 1024,
+      "height": 681
+    },
+    {
+      "id": "b1fe30",
+      "src": "photos/foto-12-b1fe30.webp",
+      "section": "infancia",
+      "width": 719,
+      "height": 1280
+    },
+    {
+      "id": "bcb5e7",
+      "src": "photos/foto-13-bcb5e7.webp",
+      "section": "infancia",
+      "width": 719,
+      "height": 995
+    },
+    {
+      "id": "8bf873",
+      "src": "photos/foto-14-8bf873.webp",
+      "section": "infancia",
+      "width": 719,
+      "height": 1230
+    },
+    {
+      "id": "54174c",
+      "src": "photos/foto-15-54174c.webp",
+      "section": "infancia",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "85bfaf",
+      "src": "photos/foto-16-85bfaf.webp",
+      "section": "adolescencia",
+      "width": 591,
+      "height": 920
+    },
+    {
+      "id": "257d9f",
+      "src": "photos/foto-17-257d9f.webp",
+      "section": "adolescencia",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "ada81a",
+      "src": "photos/foto-18-ada81a.webp",
+      "section": "adolescencia",
+      "width": 514,
+      "height": 703
+    },
+    {
+      "id": "b09437",
+      "src": "photos/foto-29-b09437.webp",
+      "section": "actual",
+      "width": 828,
+      "height": 1080
+    },
+    {
+      "id": "0d2af1",
+      "src": "photos/foto-19-0d2af1.webp",
+      "section": "actual",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "id": "6fc9b9",
+      "src": "photos/foto-24-6fc9b9.webp",
+      "section": "actual",
+      "width": 853,
+      "height": 1280
+    },
+    {
+      "id": "5d9146",
+      "src": "photos/foto-27-5d9146.webp",
+      "section": "actual",
+      "width": 828,
+      "height": 618
+    },
+    {
+      "id": "25f80e",
+      "src": "photos/foto-31-25f80e.webp",
+      "section": "actual",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "9f97d4",
+      "src": "photos/foto-25-9f97d4.webp",
+      "section": "actual",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "401ba1",
+      "src": "photos/foto-26-401ba1.webp",
+      "section": "actual",
+      "width": 452,
+      "height": 747
+    },
+    {
+      "id": "30b506",
+      "src": "photos/foto-20-30b506.webp",
+      "section": "actual",
+      "width": 580,
+      "height": 970
+    },
+    {
+      "id": "51171c",
+      "src": "photos/foto-28-51171c.webp",
+      "section": "actual",
+      "width": 828,
+      "height": 1031
+    },
+    {
+      "id": "03f431",
+      "src": "photos/foto-30-03f431.webp",
+      "section": "actual",
+      "width": 1280,
+      "height": 1280
+    },
+    {
+      "id": "1b7a88",
+      "src": "photos/foto-21-1b7a88.webp",
+      "section": "actual",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "ef7836",
+      "src": "photos/foto-22-ef7836.webp",
+      "section": "actual",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "7ade4b",
+      "src": "photos/foto-23-7ade4b.webp",
+      "section": "actual",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "64bc63",
+      "src": "photos/foto-32-64bc63.webp",
+      "section": "final",
+      "width": 960,
+      "height": 1280
+    }
+  ]
+}
