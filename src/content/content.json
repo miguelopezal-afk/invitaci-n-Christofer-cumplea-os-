@@ -49,11 +49,11 @@
   ],
   "photos": [
     {
-      "id": "bcae27",
-      "src": "photos/foto-01-bcae27.webp",
+      "id": "64bc63",
+      "src": "photos/foto-32-64bc63.webp",
       "section": "portada",
-      "width": 750,
-      "height": 1105
+      "width": 960,
+      "height": 1280
     },
     {
       "id": "4c3d02",
@@ -175,6 +175,13 @@
       "height": 703
     },
     {
+      "id": "bcae27",
+      "src": "photos/foto-01-bcae27.webp",
+      "section": "adolescencia",
+      "width": 750,
+      "height": 1105
+    },
+    {
       "id": "b09437",
       "src": "photos/foto-29-b09437.webp",
       "section": "actual",
@@ -261,13 +268,6 @@
     {
       "id": "7ade4b",
       "src": "photos/foto-23-7ade4b.webp",
-      "section": "actual",
-      "width": 960,
-      "height": 1280
-    },
-    {
-      "id": "64bc63",
-      "src": "photos/foto-32-64bc63.webp",
       "section": "final",
       "width": 960,
       "height": 1280
