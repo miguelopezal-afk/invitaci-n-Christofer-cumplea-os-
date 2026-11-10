@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3F2FA"/><stop offset="1" stop-color="#CDEAF7"/></linearGradient></defs>
+<rect width="1200" height="900" fill="url(#g)"/>
+<rect x="36" y="36" width="1128" height="828" fill="none" stroke="#D5B77A" stroke-width="2"/>
+<g fill="none" stroke="#183153" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".55" transform="translate(510 320)">
+<rect x="0" y="40" width="180" height="130" rx="14"/><path d="M52 40l14-24h48l14 24"/><circle cx="90" cy="105" r="36"/></g>
+<text x="600" y="560" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="44" fill="#183153" opacity=".75">Fotografía de demostración</text>
+<text x="600" y="620" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="24" letter-spacing="8" fill="#9C7C3C">N.º 07</text>
+</svg>

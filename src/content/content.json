@@ -1,0 +1,62 @@
+{
+  "celebrant": {
+    "name": "Chrystofer Woc",
+    "firstName": "Chrystofer",
+    "age": 22
+  },
+  "event": {
+    "type": "Celebración de cumpleaños",
+    "dateLabel": "Sábado 21 de noviembre de 2026",
+    "time": "",
+    "venue": "Edificio Tiffany II",
+    "address": "13 Calle A 7-35, Zona 10, Ciudad de Guatemala"
+  },
+  "texts": {
+    "heroTitle": "¡Felices 22 años!",
+    "heroSubtitle": "22 años de recuerdos, sueños y momentos inolvidables",
+    "heroButton": "Descubre su historia",
+    "earlyTitle": "Todo comenzó con un pequeño soñador...",
+    "earlyText": "Hace 22 años comenzó una historia llena de alegría, momentos especiales y sueños que apenas empezaban a descubrirse.",
+    "growingTitle": "Cada año, una nueva aventura",
+    "growingText": "Entre sonrisas, aventuras y momentos inolvidables, cada año fue construyendo la persona que eres hoy.",
+    "dreamsTitle": "Los sueños también crecen",
+    "dreamsText": "Hoy, a tus 22 años, seguimos celebrando cada uno de tus pasos y todos los sueños que están por hacerse realidad.",
+    "dreamsNote": "Una nueva etapa de su formación está por comenzar",
+    "momentText": "De aquel pequeño soñador\nal joven que eres hoy...\n\n22 años de historias, aprendizajes,\nalegrías y sueños por cumplir.\n\nY lo mejor de tu historia\ntodavía está por escribirse.",
+    "momentClosing": "¡Feliz cumpleaños, Chrystofer!",
+    "inviteTitle": "¡Celebremos tus 22 años!",
+    "inviteText": "Queremos compartir contigo una celebración muy especial, llena de alegría y buenos momentos.",
+    "inviteClosing": "¡Tu presencia hará esta celebración aún más especial!"
+  },
+  "timeline": [
+    {
+      "section": "infancia",
+      "label": "",
+      "title": "Infancia",
+      "description": ""
+    },
+    {
+      "section": "adolescencia",
+      "label": "",
+      "title": "Adolescencia",
+      "description": ""
+    }
+  ],
+  "photos": [
+    { "id": "d01", "src": "photos/demo-01.svg", "section": "portada", "width": 900, "height": 1200 },
+    { "id": "d02", "src": "photos/demo-02.svg", "section": "primeros", "width": 900, "height": 1200, "title": "Fotografía de demostración", "dedication": "Aquí irá una dedicatoria corta." },
+    { "id": "d03", "src": "photos/demo-03.svg", "section": "primeros", "width": 1000, "height": 1000 },
+    { "id": "d04", "src": "photos/demo-04.svg", "section": "primeros", "width": 1200, "height": 900 },
+    { "id": "d05", "src": "photos/demo-05.svg", "section": "primeros", "width": 900, "height": 1200 },
+    { "id": "d06", "src": "photos/demo-06.svg", "section": "infancia", "width": 900, "height": 1200, "title": "Fotografía de demostración" },
+    { "id": "d07", "src": "photos/demo-07.svg", "section": "infancia", "width": 1200, "height": 900 },
+    { "id": "d08", "src": "photos/demo-08.svg", "section": "infancia", "width": 1000, "height": 1000 },
+    { "id": "d09", "src": "photos/demo-09.svg", "section": "adolescencia", "width": 1200, "height": 900 },
+    { "id": "d10", "src": "photos/demo-10.svg", "section": "adolescencia", "width": 900, "height": 1200 },
+    { "id": "d11", "src": "photos/demo-11.svg", "section": "adolescencia", "width": 1000, "height": 1000 },
+    { "id": "d12", "src": "photos/demo-12.svg", "section": "actual", "width": 900, "height": 1200 },
+    { "id": "d13", "src": "photos/demo-13.svg", "section": "actual", "width": 1200, "height": 900 },
+    { "id": "d14", "src": "photos/demo-14.svg", "section": "actual", "width": 900, "height": 1200 },
+    { "id": "d15", "src": "photos/demo-15.svg", "section": "final", "width": 900, "height": 1200 }
+  ]
+}
