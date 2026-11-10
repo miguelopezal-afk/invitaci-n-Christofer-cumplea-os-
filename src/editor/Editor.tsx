@@ -54,6 +54,9 @@ const TEXT_LABELS: Record<string, string> = {
   inviteTitle: 'Invitación · título',
   inviteText: 'Invitación · texto',
   inviteClosing: 'Invitación · mensaje final',
+  shareTitle: 'Compartir · título al enviar la invitación',
+  shareMessage: 'Compartir · mensaje que acompaña al enlace',
+  footer: 'Pie de página',
 }
 
 type Tab = 'fotos' | 'textos' | 'vista' | 'exportar'

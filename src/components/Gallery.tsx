@@ -47,7 +47,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Fotografía en pantalla completa"
+          aria-label="Full-screen photo"
           className="lb-in fixed inset-0 z-50 flex flex-col bg-[#0d1c30]/95"
           onClick={close}
           onTouchStart={(e) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY })}
@@ -67,7 +67,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
             <button
               autoFocus
               onClick={close}
-              aria-label="Cerrar"
+              aria-label="Close"
               className="flex h-12 w-12 items-center justify-center rounded-full text-white hover:bg-white/10"
             >
               <X className="h-7 w-7" />
@@ -77,21 +77,21 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
             <img
               key={photo.id}
               src={photo.src}
-              alt={photo.title || 'Fotografía'}
+              alt={photo.title || 'Photo of Chrystofer'}
               className="lb-zoom max-h-full max-w-full object-contain"
               onClick={(e) => e.stopPropagation()}
             />
             {many && (
               <>
                 <button
-                  aria-label="Fotografía anterior"
+                  aria-label="Previous photo"
                   onClick={(e) => (e.stopPropagation(), step(-1))}
                   className="absolute left-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/50"
                 >
                   <ChevronLeft />
                 </button>
                 <button
-                  aria-label="Fotografía siguiente"
+                  aria-label="Next photo"
                   onClick={(e) => (e.stopPropagation(), step(1))}
                   className="absolute right-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/30 text-white hover:bg-black/50"
                 >
@@ -151,12 +151,12 @@ export function PhotoFrame({
       <button
         type="button"
         onClick={() => open(photos, index)}
-        aria-label={`Ampliar fotografía${photo.title ? `: ${photo.title}` : ''}`}
+        aria-label={`Enlarge photo${photo.title ? `: ${photo.title}` : ''}`}
         className="frame block w-full cursor-zoom-in transition-transform duration-200 active:scale-[0.98]"
       >
         <img
           src={photo.src}
-          alt={photo.title || 'Fotografía de Chrystofer'}
+          alt={photo.title || 'Photo of Chrystofer'}
           width={photo.width}
           height={photo.height}
           loading={eager ? 'eager' : 'lazy'}
@@ -255,7 +255,7 @@ export function Carousel({
         ))}
       </div>
       <div className="mt-2 flex items-center justify-center gap-4 px-4">
-        <button type="button" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Fotografía anterior" className={arrow}>
+        <button type="button" onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous photo" className={arrow}>
           <ChevronLeft className="h-5 w-5" />
         </button>
         <div className="flex items-center gap-1.5" aria-hidden="true">
@@ -270,7 +270,7 @@ export function Carousel({
           type="button"
           onClick={() => go(active + 1)}
           disabled={active === photos.length - 1}
-          aria-label="Fotografía siguiente"
+          aria-label="Next photo"
           className={arrow}
         >
           <ChevronRight className="h-5 w-5" />
@@ -289,7 +289,7 @@ export function Carousel({
         </p>
       )}
       <p className="sr-only" aria-live="polite">
-        Fotografía {active + 1} de {photos.length}
+        Photo {active + 1} of {photos.length}
       </p>
     </div>
   )

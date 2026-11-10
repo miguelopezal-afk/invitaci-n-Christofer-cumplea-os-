@@ -5,49 +5,52 @@
     "age": 22
   },
   "event": {
-    "type": "Celebración de cumpleaños",
-    "dateLabel": "Sábado 21 de noviembre de 2026",
-    "time": "2:00 p. m.",
+    "type": "Birthday celebration",
+    "dateLabel": "Saturday, November 21, 2026",
+    "time": "2:00 PM",
     "venue": "Edificio Tiffany II",
-    "address": "13 Calle A 7-35, Zona 10, Ciudad de Guatemala"
+    "address": "13 Calle A 7-35, Zona 10, Guatemala City"
   },
   "texts": {
-    "heroTitle": "¡Felices 22 años!",
-    "heroSubtitle": "22 años de recuerdos, sueños y momentos inolvidables",
-    "heroButton": "Descubre su historia",
-    "storyEyebrow": "Érase una vez...",
-    "storyTitle": "Esta es la historia de un pequeño niño que soñaba con ser cardiólogo",
-    "story1": "Hace veintidós años, en un reino rodeado de volcanes, nació un pequeño niño de rizos oscuros y sonrisa traviesa. Desde muy pequeño descubrió que el tesoro más valioso del reino no estaba guardado en ningún castillo: latía, escondido, dentro de cada persona.",
-    "story2": "El niño creció entre risas, juegos y aventuras, y con cada año su sueño crecía con él: aprender el lenguaje secreto de los corazones para poder cuidarlos.",
-    "story3": "Con el tiempo, el pequeño soñador emprendió el camino de los sanadores. Estudió con paciencia y valentía, y ya se acerca el día en que recibirá su capa blanca: no la de un mago ni la de un caballero, sino la de quienes eligen cuidar a los demás.\n\nEl cuento aún no termina... el aprendiz de cardiólogo lo sigue escribiendo, latido a latido.",
-    "earlyTitle": "Todo comenzó con un pequeño soñador...",
-    "earlyText": "Hace 22 años comenzó una historia llena de alegría, momentos especiales y sueños que apenas empezaban a descubrirse.",
+    "heroTitle": "Happy 22nd Birthday!",
+    "heroSubtitle": "22 years of memories, dreams, and unforgettable moments",
+    "heroButton": "Discover his story",
+    "storyEyebrow": "Once upon a time…",
+    "storyTitle": "This is the story of a little boy who dreamed of becoming a cardiologist",
+    "story1": "Twenty-two years ago, in a kingdom ringed by volcanoes, a little boy with dark curls and a mischievous smile came into the world. He was still very small when he discovered that the kingdom’s most precious treasure was not locked away in any castle: it was beating, hidden, inside each and every person.",
+    "story2": "The boy grew up amid laughter, games, and adventures, and with every passing year his dream grew right along with him: to learn the secret language of hearts, so that he could care for them.",
+    "story3": "In time, the little dreamer set out on the path of the healers. He has studied with patience and courage, and the day is drawing near when he will receive his white coat: not a wizard’s cloak, nor a knight’s cape, but the coat of those who choose to care for others.\n\nThe tale is not over yet… the aspiring cardiologist is still writing it, heartbeat by heartbeat.",
+    "earlyTitle": "It all began with a little dreamer…",
+    "earlyText": "A story began 22 years ago, one filled with joy, special moments, and dreams only just beginning to unfold.",
     "carouselHint": "Scroll",
-    "growingTitle": "Cada año, una nueva aventura",
-    "growingText": "Entre sonrisas, aventuras y momentos inolvidables, cada año fue construyendo la persona que eres hoy.",
-    "dreamsTitle": "Los sueños también crecen",
-    "dreamsText": "Hoy, a tus 22 años, seguimos celebrando cada uno de tus pasos y todos los sueños que están por hacerse realidad.",
-    "dreamsNote": "Una nueva etapa de su formación está por comenzar",
-    "momentText": "De aquel pequeño soñador\nal joven que eres hoy...\n\n22 años de historias, aprendizajes,\nalegrías y sueños por cumplir.\n\nY lo mejor de tu historia\ntodavía está por escribirse.",
-    "momentClosing": "¡Feliz cumpleaños, Chrystofer!",
-    "inviteTitle": "¡Celebremos tus 22 años!",
-    "inviteText": "Queremos compartir contigo una celebración muy especial, llena de alegría y buenos momentos.",
-    "inviteClosing": "¡Tu presencia hará esta celebración aún más especial!"
+    "growingTitle": "Every year, a new adventure",
+    "growingText": "Through smiles, adventures, and unforgettable moments, each year helped shape the person you are today.",
+    "dreamsTitle": "Dreams grow up, too",
+    "dreamsText": "Today, as you turn 22, we keep celebrating every step you take and all the dreams still to come true.",
+    "dreamsNote": "A new chapter of his training is about to begin",
+    "momentText": "From that little dreamer\nto the young man you are today…\n\n22 years of stories, lessons,\njoys, and dreams still ahead.\n\nAnd the best of your story\nis yet to be written.",
+    "momentClosing": "Happy Birthday, Chrystofer!",
+    "inviteTitle": "Let’s celebrate your 22nd!",
+    "inviteText": "We’d love for you to join us for a very special celebration, full of joy and good times.",
+    "inviteClosing": "Your presence will make this celebration even more special!",
+    "shareTitle": "Chrystofer Woc Turns 22!",
+    "shareMessage": "Let’s celebrate Chrystofer Woc’s 22nd birthday! Open the invitation here:",
+    "footer": "Chrystofer Woc · 22 years"
   },
   "timeline": [
     {
       "section": "infancia",
       "label": "",
-      "title": "Infancia",
+      "title": "Childhood",
       "description": "",
       "story": ""
     },
     {
       "section": "adolescencia",
       "label": "",
-      "title": "Adolescencia",
+      "title": "Teen years",
       "description": "",
-      "story": "Pasaron las estaciones y el niño dejó de ser tan pequeño. Sus pasos se hicieron más largos, sus preguntas más grandes, y el mundo, que antes cabía en un patio de juegos, empezó a extenderse más allá de los volcanes. Pero en el bolsillo seguía guardando, intacto, el mismo sueño de siempre."
+      "story": "The seasons came and went, and the little boy was not so little anymore. His steps grew longer, his questions bigger, and the world, which had once fit inside a playground, began to stretch out beyond the volcanoes. But in his pocket he still carried, untouched, the very same dream."
     }
   ],
   "photos": [

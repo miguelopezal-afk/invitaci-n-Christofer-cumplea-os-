@@ -69,20 +69,20 @@ export default function Invitation({ content }: { content: Content }) {
         {/* 2 · LOS PRIMEROS AÑOS -------------------------------------- */}
         <section className="bg-cream px-5 py-20">
           <Reveal className="mx-auto max-w-xl text-center">
-            <p className="eyebrow">Los primeros años</p>
+            <p className="eyebrow">The early years</p>
             <h2 className="section-title mt-3">{t.earlyTitle}</h2>
             <Divider className="my-6" />
             <p className="lead">{t.earlyText}</p>
           </Reveal>
           <Reveal className="-mx-5 mt-10">
-            <Carousel photos={early} label="Fotografías de sus primeros años" hint={t.carouselHint} />
+            <Carousel photos={early} label="Photos from his early years" hint={t.carouselHint} />
           </Reveal>
         </section>
 
         {/* 3 · CRECIENDO ENTRE RECUERDOS ------------------------------ */}
         <section className="bg-white py-20">
           <Reveal className="mx-auto max-w-xl px-5 text-center">
-            <p className="eyebrow">Creciendo entre recuerdos</p>
+            <p className="eyebrow">Memories of growing up</p>
             <h2 className="section-title mt-3">{t.growingTitle}</h2>
             <Divider className="my-6" />
             <p className="lead">{t.growingText}</p>
@@ -117,7 +117,7 @@ export default function Invitation({ content }: { content: Content }) {
                       )}
                     </div>
                     <div className="mt-5 pb-10">
-                      <Carousel photos={list} label={`Fotografías: ${group.title}`} hint={t.carouselHint} />
+                      <Carousel photos={list} label={`Photos: ${group.title}`} hint={t.carouselHint} />
                     </div>
                   </Reveal>
                 </li>
@@ -129,13 +129,13 @@ export default function Invitation({ content }: { content: Content }) {
         {/* 4 · SUEÑOS Y NUEVOS CAMINOS -------------------------------- */}
         <section className="bg-gradient-to-b from-sky/45 via-cream to-cream py-20">
           <Reveal className="mx-auto max-w-xl px-5 text-center">
-            <p className="eyebrow">Sueños y nuevos caminos</p>
+            <p className="eyebrow">Dreams and new paths</p>
             <h2 className="section-title mt-3">{t.dreamsTitle}</h2>
             <Divider className="my-6" />
             <p className="lead">{t.dreamsText}</p>
           </Reveal>
           <Reveal className="mt-10">
-            <Carousel photos={current} label="Fotografías de su etapa actual" hint={t.carouselHint} />
+            <Carousel photos={current} label="Photos of him today" hint={t.carouselHint} />
           </Reveal>
           {t.story3 && (
             <Reveal className="mx-auto mt-14 max-w-md px-6">
@@ -186,13 +186,13 @@ export default function Invitation({ content }: { content: Content }) {
                 <p className="lead mx-auto max-w-sm">{t.inviteText}</p>
 
                 <dl className="mx-auto mt-9 max-w-xs space-y-6 text-center">
-                  <Detail icon={<CalendarDays className="h-5 w-5" />} label="Fecha" value={event.dateLabel} />
+                  <Detail icon={<CalendarDays className="h-5 w-5" />} label="Date" value={event.dateLabel} />
                   {event.time.trim() && (
-                    <Detail icon={<Clock className="h-5 w-5" />} label="Hora" value={event.time} />
+                    <Detail icon={<Clock className="h-5 w-5" />} label="Time" value={event.time} />
                   )}
                   <Detail
                     icon={<MapPin className="h-5 w-5" />}
-                    label="Lugar"
+                    label="Place"
                     value={event.venue}
                     extra={event.address}
                   />
@@ -208,9 +208,9 @@ export default function Invitation({ content }: { content: Content }) {
                     )}`}
                   >
                     <Navigation className="h-4 w-4" aria-hidden="true" />
-                    Cómo llegar
+                    Get directions
                   </a>
-                  <ShareButton title={`${celebrant.name} — ¡${celebrant.age} años!`} text={t.inviteTitle} />
+                  <ShareButton title={t.shareTitle} text={t.shareMessage} />
                 </div>
 
                 <p className="mt-10 font-serif text-xl italic leading-snug text-navy">{t.inviteClosing}</p>
@@ -218,7 +218,7 @@ export default function Invitation({ content }: { content: Content }) {
             </div>
           </Reveal>
           <p className="mt-10 text-center font-sans text-[0.7rem] uppercase tracking-[0.3em] text-navy/40">
-            {celebrant.name} · {celebrant.age} años
+            {t.footer}
           </p>
         </section>
       </main>
@@ -297,7 +297,7 @@ function ShareButton({ title, text }: { title: string; text: string }) {
   return (
     <button type="button" onClick={share} className="btn-outline">
       {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Share2 className="h-4 w-4" aria-hidden="true" />}
-      <span aria-live="polite">{copied ? 'Enlace copiado' : 'Compartir invitación'}</span>
+      <span aria-live="polite">{copied ? 'Link copied' : 'Share invitation'}</span>
     </button>
   )
 }
