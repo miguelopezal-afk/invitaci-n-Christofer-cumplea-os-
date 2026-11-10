@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "celebrant": {
     "name": "Chrystofer Woc",
     "firstName": "Chrystofer",
@@ -13,9 +13,11 @@
     "address": "13 Calle A 7-35, Zona 10, Ciudad de Guatemala"
   },
   "texts": {
-    "heroTitle": "¡Felices 22 años!",
-    "heroSubtitle": "22 años de recuerdos, sueños y momentos inolvidables",
-    "heroButton": "Descubre su historia",
+    "heroEyebrow": "Birthday celebration",
+    "heroLang": "en",
+    "heroTitle": "Happy 22nd Birthday!",
+    "heroSubtitle": "22 years of memories, dreams, and unforgettable moments",
+    "heroButton": "Discover his story",
     "storyEyebrow": "Érase una vez...",
     "storyTitle": "Esta es la historia de un pequeño niño que soñaba con ser cardiólogo",
     "storyLang": "es",
