@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { CalendarDays, Check, ChevronDown, Clock, MapPin, Navigation, Share2 } from 'lucide-react'
 import { bySection, type Content } from '../lib/types'
+import { CoatShareButton } from './CoatShareButton'
 import { Caption, Carousel, LightboxProvider, PhotoFrame } from './Gallery'
 import { Divider, Reveal, Sparkle, WhiteCoat } from './ui'
 
@@ -214,6 +215,13 @@ export default function Invitation({ content }: { content: Content }) {
                 </div>
 
                 <p className="mt-10 font-serif text-xl italic leading-snug text-navy">{t.inviteClosing}</p>
+
+                {/* Sello final de la tarjeta: la bata que se envía por WhatsApp */}
+                {t.whatsappButton && (
+                  <Reveal className="mt-9">
+                    <CoatShareButton label={t.whatsappButton} message={t.shareMessage} />
+                  </Reveal>
+                )}
               </div>
             </div>
           </Reveal>

@@ -53,9 +53,10 @@ const TEXT_LABELS: Record<string, string> = {
   momentClosing: 'Gran momento · cierre',
   inviteTitle: 'Invitación · título',
   inviteText: 'Invitación · texto',
+  whatsappButton: 'Invitación · botón de WhatsApp',
   inviteClosing: 'Invitación · mensaje final',
   shareTitle: 'Compartir · título al enviar la invitación',
-  shareMessage: 'Compartir · mensaje que acompaña al enlace',
+  shareMessage: 'Compartir · mensaje que acompaña al enlace (también por WhatsApp)',
   footer: 'Pie de página',
 }
 
