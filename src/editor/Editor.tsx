@@ -40,7 +40,7 @@ const TEXT_LABELS: Record<string, string> = {
   storyTitle: 'Cuento · título',
   story1: 'Cuento · capítulo 1 (tras la portada)',
   story2: 'Cuento · capítulo 2 (creciendo)',
-  story3: 'Cuento · capítulo 3 (sueños)',
+  story3: 'Cuento · capítulo final (sueños)',
   earlyTitle: 'Primeros años · título',
   earlyText: 'Primeros años · texto',
   growingTitle: 'Creciendo · título',
@@ -448,6 +448,24 @@ export default function Editor() {
                       />
                     </Field>
                   ))}
+                  <div className="sm:col-span-3">
+                    <Field label={`${SECTIONS.find((s) => s.id === g.section)!.label} · Pasaje del cuento antes de esta etapa (opcional)`}>
+                      <textarea
+                        className={input}
+                        rows={3}
+                        value={g.story ?? ''}
+                        onChange={(e) =>
+                          setState((s) => ({
+                            ...s,
+                            content: {
+                              ...s.content,
+                              timeline: s.content.timeline.map((x, j) => (j === i ? { ...x, story: e.target.value } : x)),
+                            },
+                          }))
+                        }
+                      />
+                    </Field>
+                  </div>
                 </div>
               ))}
             </Panel>

@@ -29,6 +29,8 @@ export interface TimelineGroup {
   label: string
   title: string
   description: string
+  /** Pasaje del cuento que se muestra justo antes de esta etapa (opcional). */
+  story?: string
 }
 
 export interface Content {
