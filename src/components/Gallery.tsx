@@ -177,15 +177,44 @@ export function PhotoFrame({
 
 export function Album({ photos }: { photos: Photo[] }) {
   if (!photos.length) return null
+  // Reparto manual en dos columnas: cada fotografía va a la columna más corta,
+  // así ambas quedan parejas (las columnas CSS las desbalancean en Safari).
+  const weight = (p: Photo) => p.height / p.width + (p.title || p.dedication || p.description ? 0.35 : 0.08)
+  const w = photos.map(weight)
+  const total = w.reduce((a, x) => a + x, 0)
+  let mask = 0
+  if (photos.length <= 16) {
+    // Pocas fotografías: se prueba cada reparto y se elige el más parejo.
+    let best = Infinity
+    for (let m = 0; m < 1 << photos.length; m += 2) {
+      let right = 0
+      for (let i = 0; i < w.length; i++) if (m & (1 << i)) right += w[i]
+      const diff = Math.abs(total - 2 * right)
+      if (diff < best) (best = diff), (mask = m)
+    }
+  } else {
+    const h = [0, 0]
+    w.forEach((x, i) => {
+      const k = h[0] <= h[1] ? 0 : 1
+      h[k] += x
+      if (k) mask |= 1 << i
+    })
+  }
+  const cols: number[][] = [[], []]
+  photos.forEach((_, i) => cols[mask & (1 << i) ? 1 : 0].push(i))
   return (
-    <div className="mx-auto max-w-2xl columns-2 gap-4 px-1 sm:gap-6">
-      {photos.map((p, i) => (
-        <PhotoFrame
-          key={p.id}
-          photos={photos}
-          index={i}
-          className={`mb-5 break-inside-avoid ${i % 3 === 0 ? '-rotate-1' : i % 3 === 1 ? 'rotate-1' : ''}`}
-        />
+    <div className="mx-auto flex max-w-2xl items-start gap-4 px-1 sm:gap-6">
+      {cols.map((col, c) => (
+        <div key={c} className="flex min-w-0 flex-1 flex-col gap-5">
+          {col.map((i) => (
+            <PhotoFrame
+              key={photos[i].id}
+              photos={photos}
+              index={i}
+              className={i % 3 === 0 ? '-rotate-1' : i % 3 === 1 ? 'rotate-1' : ''}
+            />
+          ))}
+        </div>
       ))}
     </div>
   )
