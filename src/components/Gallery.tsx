@@ -175,7 +175,19 @@ export function PhotoFrame({
 /* Álbum (mosaico de dos columnas)                                      */
 /* ------------------------------------------------------------------ */
 
-export function Album({ photos }: { photos: Photo[] }) {
+export function Album({
+  photos,
+  tilt = true,
+  all,
+  offset = 0,
+}: {
+  photos: Photo[]
+  /** Ligera inclinación de álbum familiar. */
+  tilt?: boolean
+  /** Lista completa para la pantalla completa, si este mosaico muestra solo una parte. */
+  all?: Photo[]
+  offset?: number
+}) {
   if (!photos.length) return null
   // Reparto manual en dos columnas: cada fotografía va a la columna más corta,
   // así ambas quedan parejas (las columnas CSS las desbalancean en Safari).
@@ -209,9 +221,9 @@ export function Album({ photos }: { photos: Photo[] }) {
           {col.map((i) => (
             <PhotoFrame
               key={photos[i].id}
-              photos={photos}
-              index={i}
-              className={i % 3 === 0 ? '-rotate-1' : i % 3 === 1 ? 'rotate-1' : ''}
+              photos={all ?? photos}
+              index={i + offset}
+              className={!tilt ? '' : i % 3 === 0 ? '-rotate-1' : i % 3 === 1 ? 'rotate-1' : ''}
             />
           ))}
         </div>
@@ -236,14 +248,16 @@ export function Carousel({ photos, label }: { photos: Photo[]; label: string }) 
     <div role="group" aria-label={label}>
       <div
         ref={ref}
-        className="no-scrollbar flex snap-x snap-mandatory items-center gap-4 overflow-x-auto scroll-smooth px-[9%] py-2"
+        className="no-scrollbar flex snap-x snap-mandatory items-center gap-4 overflow-x-auto scroll-smooth py-2"
       >
         {photos.map((p, i) => (
           <PhotoFrame
             key={p.id}
             photos={photos}
             index={i}
-            className={`shrink-0 snap-center ${p.width > p.height ? 'w-[82%] max-w-md' : 'w-[68%] max-w-[19rem]'}`}
+            className={`shrink-0 snap-center ${p.width > p.height
+                ? 'w-[82%] max-w-md first:ml-[9%] last:mr-[9%]'
+                : 'w-[68%] max-w-[19rem] first:ml-[16%] last:mr-[16%]'}`}
           />
         ))}
       </div>

@@ -93,26 +93,30 @@ export default function Invitation({ content }: { content: Content }) {
             </Reveal>
           )}
 
-          <ol className="relative mx-auto mt-14 max-w-2xl">
-            <span className="absolute bottom-0 left-1/2 top-0 w-px -translate-x-1/2 bg-gold/50" aria-hidden="true" />
+          <ol className="mx-auto mt-6 max-w-2xl">
             {timeline.map((group) => {
               const list = bySection(photos, group.section)
               if (!list.length && !group.description) return null
+              // Si la primera fotografía es horizontal, se muestra grande; el resto, en dos columnas.
+              const lead = list.length > 2 && list[0].width > list[0].height ? list.slice(0, 1) : []
+              const rest = list.slice(lead.length)
               return (
-                <li key={group.section} className="relative pb-16 last:pb-0">
+                <li key={group.section}>
                   <Reveal>
-                    <div className="relative mx-auto w-fit bg-white px-6 py-3 text-center">
-                      <span className="mx-auto mb-3 block h-2.5 w-2.5 rotate-45 bg-gold" aria-hidden="true" />
-                      {group.label && <p className="eyebrow">{group.label}</p>}
-                      <h3 className="font-display text-2xl text-navy">{group.title}</h3>
+                    <div className="text-center">
+                      <span className="mx-auto block h-14 w-px bg-gold/60" aria-hidden="true" />
+                      <span className="mx-auto my-4 block h-2.5 w-2.5 rotate-45 bg-gold" aria-hidden="true" />
+                      {group.label && <p className="eyebrow mb-1">{group.label}</p>}
+                      <h3 className="font-display text-[1.7rem] text-navy">{group.title}</h3>
+                      {group.description && (
+                        <p className="mx-auto mt-2 max-w-md px-6 font-serif text-lg leading-relaxed text-navy/75">
+                          {group.description}
+                        </p>
+                      )}
                     </div>
-                    {group.description && (
-                      <p className="relative mx-auto mt-2 max-w-md bg-white px-6 py-2 text-center font-serif text-lg leading-relaxed text-navy/75">
-                        {group.description}
-                      </p>
-                    )}
-                    <div className="relative mt-6">
-                      <Carousel photos={list} label={`Fotografías: ${group.title}`} />
+                    <div className="mt-7 space-y-5 px-5 pb-10">
+                      {lead.length > 0 && <PhotoFrame photos={list} index={0} className="mx-auto max-w-2xl px-1" />}
+                      <Album photos={rest} tilt={false} offset={lead.length} all={list} />
                     </div>
                   </Reveal>
                 </li>
