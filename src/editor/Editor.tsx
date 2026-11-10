@@ -43,6 +43,7 @@ const TEXT_LABELS: Record<string, string> = {
   story3: 'Cuento · capítulo final (sueños)',
   earlyTitle: 'Primeros años · título',
   earlyText: 'Primeros años · texto',
+  carouselHint: 'Carruseles · aviso bajo las fotos',
   growingTitle: 'Creciendo · título',
   growingText: 'Creciendo · texto',
   dreamsTitle: 'Sueños · título',

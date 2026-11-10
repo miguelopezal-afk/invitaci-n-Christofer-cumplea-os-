@@ -75,7 +75,7 @@ export default function Invitation({ content }: { content: Content }) {
             <p className="lead">{t.earlyText}</p>
           </Reveal>
           <Reveal className="-mx-5 mt-10">
-            <Carousel photos={early} label="Fotografías de sus primeros años" />
+            <Carousel photos={early} label="Fotografías de sus primeros años" hint={t.carouselHint} />
           </Reveal>
         </section>
 
@@ -117,7 +117,7 @@ export default function Invitation({ content }: { content: Content }) {
                       )}
                     </div>
                     <div className="mt-5 pb-10">
-                      <Carousel photos={list} label={`Fotografías: ${group.title}`} />
+                      <Carousel photos={list} label={`Fotografías: ${group.title}`} hint={t.carouselHint} />
                     </div>
                   </Reveal>
                 </li>
@@ -135,7 +135,7 @@ export default function Invitation({ content }: { content: Content }) {
             <p className="lead">{t.dreamsText}</p>
           </Reveal>
           <Reveal className="mt-10">
-            <Carousel photos={current} label="Fotografías de su etapa actual" />
+            <Carousel photos={current} label="Fotografías de su etapa actual" hint={t.carouselHint} />
           </Reveal>
           {t.story3 && (
             <Reveal className="mx-auto mt-14 max-w-md px-6">

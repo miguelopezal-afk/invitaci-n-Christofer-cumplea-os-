@@ -72,6 +72,23 @@
   scale: 1;
 }
 
+/* Aviso del carrusel: la flecha da un pequeño empujón hacia la derecha */
+@keyframes swipe-hint {
+  0%,
+  55%,
+  100% {
+    transform: none;
+    opacity: 0.55;
+  }
+  75% {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+}
+.swipe-hint {
+  animation: swipe-hint 2.4s ease-in-out infinite;
+}
+
 /* Pantalla completa: aparece con un fundido y un leve acercamiento */
 @keyframes lb-in {
   from {
@@ -108,7 +125,8 @@
     transition: none;
   }
   .lb-in,
-  .lb-zoom {
+  .lb-zoom,
+  .swipe-hint {
     animation: none;
   }
 }
