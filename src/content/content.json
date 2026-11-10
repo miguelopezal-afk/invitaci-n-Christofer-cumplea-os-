@@ -170,6 +170,13 @@
       "height": 703
     },
     {
+      "id": "b09437",
+      "src": "photos/foto-29-b09437.webp",
+      "section": "actual",
+      "width": 828,
+      "height": 1080
+    },
+    {
       "id": "0d2af1",
       "src": "photos/foto-19-0d2af1.webp",
       "section": "actual",
@@ -177,11 +184,60 @@
       "height": 1024
     },
     {
+      "id": "6fc9b9",
+      "src": "photos/foto-24-6fc9b9.webp",
+      "section": "actual",
+      "width": 853,
+      "height": 1280
+    },
+    {
+      "id": "5d9146",
+      "src": "photos/foto-27-5d9146.webp",
+      "section": "actual",
+      "width": 828,
+      "height": 618
+    },
+    {
+      "id": "25f80e",
+      "src": "photos/foto-31-25f80e.webp",
+      "section": "actual",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "9f97d4",
+      "src": "photos/foto-25-9f97d4.webp",
+      "section": "actual",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "401ba1",
+      "src": "photos/foto-26-401ba1.webp",
+      "section": "actual",
+      "width": 452,
+      "height": 747
+    },
+    {
       "id": "30b506",
       "src": "photos/foto-20-30b506.webp",
       "section": "actual",
       "width": 580,
       "height": 970
+    },
+    {
+      "id": "51171c",
+      "src": "photos/foto-28-51171c.webp",
+      "section": "actual",
+      "width": 828,
+      "height": 1031
+    },
+    {
+      "id": "03f431",
+      "src": "photos/foto-30-03f431.webp",
+      "section": "actual",
+      "width": 1280,
+      "height": 1280
     },
     {
       "id": "1b7a88",
