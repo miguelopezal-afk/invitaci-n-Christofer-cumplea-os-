@@ -203,7 +203,7 @@ export default function Editor() {
   const doExport = async () => {
     setBusy('Generando ZIP…')
     try {
-      download(await exportZip(state), 'album-chrystofer-22.zip')
+      download(await exportZip(state), 'album-christofer-22.zip')
       setNotice('ZIP descargado. Sigue los pasos de abajo para publicarlo.')
     } catch (e) {
       setNotice(`No se pudo generar el ZIP: ${(e as Error).message}`)

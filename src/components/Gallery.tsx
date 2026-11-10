@@ -77,7 +77,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
             <img
               key={photo.id}
               src={photo.src}
-              alt={photo.title || 'Fotografía de Chrystofer'}
+              alt={photo.title || 'Fotografía de Christofer'}
               className="lb-zoom max-h-full max-w-full object-contain"
               onClick={(e) => e.stopPropagation()}
             />
@@ -156,7 +156,7 @@ export function PhotoFrame({
       >
         <img
           src={photo.src}
-          alt={photo.title || 'Fotografía de Chrystofer'}
+          alt={photo.title || 'Fotografía de Christofer'}
           width={photo.width}
           height={photo.height}
           loading={eager ? 'eager' : 'lazy'}
