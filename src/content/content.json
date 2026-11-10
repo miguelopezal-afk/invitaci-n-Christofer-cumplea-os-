@@ -15,11 +15,12 @@
     "heroTitle": "Happy 22nd Birthday!",
     "heroSubtitle": "22 years of memories, dreams, and unforgettable moments",
     "heroButton": "Discover his story",
-    "storyEyebrow": "Once upon a time…",
-    "storyTitle": "This is the story of a little boy who dreamed of becoming a cardiologist",
-    "story1": "Twenty-two years ago, in a kingdom ringed by volcanoes, a little boy with dark curls and a mischievous smile came into the world. He was still very small when he discovered that the kingdom’s most precious treasure was not locked away in any castle: it was beating, hidden, inside each and every person.",
-    "story2": "The boy grew up amid laughter, games, and adventures, and with every passing year his dream grew right along with him: to learn the secret language of hearts, so that he could care for\u00a0them.",
-    "story3": "In time, the little dreamer set out on the path of the healers. He has studied with patience and courage, and the day is drawing near when he will receive his white coat: not a wizard’s cloak, nor a knight’s cape, but the coat of those who choose to care for others.\n\nThe tale is not over yet… the aspiring cardiologist is still writing it, heartbeat\u00a0by\u00a0heartbeat.",
+    "storyEyebrow": "Érase una vez...",
+    "storyTitle": "Esta es la historia de un pequeño niño que soñaba con ser cardiólogo",
+    "storyLang": "es",
+    "story1": "Hace veintidós años, en un reino rodeado de volcanes, nació un pequeño niño de rizos oscuros y sonrisa traviesa. Desde muy pequeño descubrió que el tesoro más valioso del reino no estaba guardado en ningún castillo: latía, escondido, dentro de cada persona.",
+    "story2": "El niño creció entre risas, juegos y aventuras, y con cada año su sueño crecía con él: aprender el lenguaje secreto de los corazones para poder cuidarlos.",
+    "story3": "Con el tiempo, el pequeño soñador emprendió el camino de los sanadores. Estudió con paciencia y valentía, y ya se acerca el día en que recibirá su capa blanca: no la de un mago ni la de un caballero, sino la de quienes eligen cuidar a los demás.\n\nEl cuento aún no termina... el aprendiz de cardiólogo lo sigue escribiendo, latido\u00a0a\u00a0latido.",
     "earlyTitle": "It all began with a little dreamer…",
     "earlyText": "A story began 22 years ago, one filled with joy, special moments, and dreams only just starting to unfold.",
     "carouselHint": "Scroll",
@@ -52,7 +53,7 @@
       "label": "",
       "title": "Teen years",
       "description": "",
-      "story": "The seasons came and went, and the little boy was not so little anymore. His steps grew longer, his questions bigger, and the world, which had once fit inside a playground, began to stretch out beyond the volcanoes. But in his pocket he still carried, untouched, the very same\u00a0dream."
+      "story": "Pasaron las estaciones y el niño dejó de ser tan pequeño. Sus pasos se hicieron más largos, sus preguntas más grandes, y el mundo, que antes cabía en un patio de juegos, empezó a extenderse más allá de los volcanes. Pero en el bolsillo seguía guardando, intacto, el mismo sueño de siempre."
     }
   ],
   "photos": [

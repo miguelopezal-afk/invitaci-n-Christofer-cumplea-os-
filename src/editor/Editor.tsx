@@ -54,6 +54,7 @@ const TEXT_LABELS: Record<string, string> = {
   heroButton: 'Portada · botón',
   storyEyebrow: 'Cuento · entrada',
   storyTitle: 'Cuento · título',
+  storyLang: 'Cuento · idioma (código: es, en…)',
   story1: 'Cuento · capítulo 1 (tras la portada)',
   story2: 'Cuento · capítulo 2 (creciendo)',
   story3: 'Cuento · capítulo final (sueños)',
