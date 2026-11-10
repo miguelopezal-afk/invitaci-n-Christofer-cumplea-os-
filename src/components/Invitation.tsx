@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { CalendarDays, Check, ChevronDown, Clock, MapPin, Navigation, Share2 } from 'lucide-react'
+import { shareUrl } from '../lib/share'
 import { bySection, type Content } from '../lib/types'
+import { CoatShareButton } from './CoatShareButton'
 import { Caption, Carousel, LightboxProvider, PhotoFrame } from './Gallery'
 import { Divider, Reveal, Sparkle, WhiteCoat } from './ui'
 
@@ -11,6 +13,8 @@ export default function Invitation({ content }: { content: Content }) {
   const early = bySection(photos, 'primeros')
   const current = bySection(photos, 'actual')
   const final = bySection(photos, 'final').slice(0, 1)
+  // Si falta el texto (content.json antiguo) se usa el habitual; vacío o en blanco, el botón no se muestra.
+  const whatsappLabel = (t.whatsappButton ?? 'Share on WhatsApp').trim()
 
   return (
     <LightboxProvider>
@@ -46,7 +50,7 @@ export default function Invitation({ content }: { content: Content }) {
               </div>
             )}
             <p className="lead mx-auto mt-8 max-w-xs">{t.heroSubtitle}</p>
-            <a href="#historia" className="btn-primary mt-8">
+            <a href="#story" className="btn-primary mt-8">
               {t.heroButton}
               <ChevronDown className="h-4 w-4" aria-hidden="true" />
             </a>
@@ -54,7 +58,7 @@ export default function Invitation({ content }: { content: Content }) {
         </section>
 
         {/* EL CUENTO · prólogo ---------------------------------------- */}
-        <div id="historia" />
+        <div id="story" />
         {t.story1 && (
           <section className="bg-sky/30 px-6 py-20">
             <Reveal className="mx-auto max-w-md text-center">
@@ -69,20 +73,20 @@ export default function Invitation({ content }: { content: Content }) {
         {/* 2 · LOS PRIMEROS AÑOS -------------------------------------- */}
         <section className="bg-cream px-5 py-20">
           <Reveal className="mx-auto max-w-xl text-center">
-            <p className="eyebrow">Los primeros años</p>
+            <p className="eyebrow">The early years</p>
             <h2 className="section-title mt-3">{t.earlyTitle}</h2>
             <Divider className="my-6" />
             <p className="lead">{t.earlyText}</p>
           </Reveal>
           <Reveal className="-mx-5 mt-10">
-            <Carousel photos={early} label="Fotografías de sus primeros años" hint={t.carouselHint} />
+            <Carousel photos={early} label="Photos from his early years" hint={t.carouselHint} />
           </Reveal>
         </section>
 
         {/* 3 · CRECIENDO ENTRE RECUERDOS ------------------------------ */}
         <section className="bg-white py-20">
           <Reveal className="mx-auto max-w-xl px-5 text-center">
-            <p className="eyebrow">Creciendo entre recuerdos</p>
+            <p className="eyebrow">Memories of growing up</p>
             <h2 className="section-title mt-3">{t.growingTitle}</h2>
             <Divider className="my-6" />
             <p className="lead">{t.growingText}</p>
@@ -117,7 +121,7 @@ export default function Invitation({ content }: { content: Content }) {
                       )}
                     </div>
                     <div className="mt-5 pb-10">
-                      <Carousel photos={list} label={`Fotografías: ${group.title}`} hint={t.carouselHint} />
+                      <Carousel photos={list} label={`Photos: ${group.title}`} hint={t.carouselHint} />
                     </div>
                   </Reveal>
                 </li>
@@ -129,22 +133,22 @@ export default function Invitation({ content }: { content: Content }) {
         {/* 4 · SUEÑOS Y NUEVOS CAMINOS -------------------------------- */}
         <section className="bg-gradient-to-b from-sky/45 via-cream to-cream py-20">
           <Reveal className="mx-auto max-w-xl px-5 text-center">
-            <p className="eyebrow">Sueños y nuevos caminos</p>
+            <p className="eyebrow">Dreams and new paths</p>
             <h2 className="section-title mt-3">{t.dreamsTitle}</h2>
             <Divider className="my-6" />
             <p className="lead">{t.dreamsText}</p>
           </Reveal>
           <Reveal className="mt-10">
-            <Carousel photos={current} label="Fotografías de su etapa actual" hint={t.carouselHint} />
+            <Carousel photos={current} label="Photos of him today" hint={t.carouselHint} />
           </Reveal>
           {t.story3 && (
             <Reveal className="mx-auto mt-14 max-w-md px-6">
               <Story text={t.story3} framed />
             </Reveal>
           )}
-          <Reveal className="mx-auto mt-12 flex max-w-xs flex-col items-center px-5 text-center">
+          <Reveal className="mx-auto mt-12 flex max-w-sm flex-col items-center px-5 text-center">
             <WhiteCoat className="h-36 w-auto" />
-            {t.dreamsNote && <p className="mt-4 font-serif text-lg italic text-navy/70">{t.dreamsNote}</p>}
+            {t.dreamsNote && <p className="mt-4 font-serif text-lg italic text-navy/70 [text-wrap:balance]">{t.dreamsNote}</p>}
           </Reveal>
         </section>
 
@@ -164,7 +168,7 @@ export default function Invitation({ content }: { content: Content }) {
                 </div>
               </figure>
             )}
-            <p className="mt-10 whitespace-pre-line font-serif text-[1.45rem] italic leading-relaxed text-white/90">
+            <p className="mt-10 whitespace-pre-line font-serif text-[clamp(1.3rem,6.6vw,1.45rem)] italic leading-relaxed text-white/90">
               {t.momentText}
             </p>
             <Divider className="my-8" />
@@ -178,7 +182,7 @@ export default function Invitation({ content }: { content: Content }) {
             <div className="border border-gold bg-white p-2 shadow-[0_24px_60px_-40px_rgba(24,49,83,0.5)]">
               <div className="border border-gold/50 px-5 py-12 text-center sm:px-10">
                 <p className="eyebrow">{event.type}</p>
-                <h2 className="mt-4 font-display text-[clamp(1.6rem,7vw,2.2rem)] uppercase leading-tight tracking-[0.06em] text-navy">
+                <h2 className="mt-4 font-display text-[clamp(1.4rem,7vw,2.2rem)] uppercase lining-nums leading-tight tracking-[0.06em] text-navy">
                   {t.inviteTitle}
                 </h2>
                 <p className="mt-4 font-serif text-2xl italic tracking-wide text-golddeep">{celebrant.name}</p>
@@ -186,13 +190,13 @@ export default function Invitation({ content }: { content: Content }) {
                 <p className="lead mx-auto max-w-sm">{t.inviteText}</p>
 
                 <dl className="mx-auto mt-9 max-w-xs space-y-6 text-center">
-                  <Detail icon={<CalendarDays className="h-5 w-5" />} label="Fecha" value={event.dateLabel} />
+                  <Detail icon={<CalendarDays className="h-5 w-5" />} label="Date" value={event.dateLabel} />
                   {event.time.trim() && (
-                    <Detail icon={<Clock className="h-5 w-5" />} label="Hora" value={event.time} />
+                    <Detail icon={<Clock className="h-5 w-5" />} label="Time" value={event.time} />
                   )}
                   <Detail
                     icon={<MapPin className="h-5 w-5" />}
-                    label="Lugar"
+                    label="Place"
                     value={event.venue}
                     extra={event.address}
                   />
@@ -208,17 +212,25 @@ export default function Invitation({ content }: { content: Content }) {
                     )}`}
                   >
                     <Navigation className="h-4 w-4" aria-hidden="true" />
-                    Cómo llegar
+                    Get directions
                   </a>
-                  <ShareButton title={`${celebrant.name} — ¡${celebrant.age} años!`} text={t.inviteTitle} />
+                  <ShareButton title={t.shareTitle} text={t.shareMessage} />
                 </div>
 
-                <p className="mt-10 font-serif text-xl italic leading-snug text-navy">{t.inviteClosing}</p>
+                <p className="mt-10 font-serif text-xl italic leading-snug text-navy [text-wrap:balance]">{t.inviteClosing}</p>
+
+                {/* Sello final de la tarjeta: la bata que se envía por WhatsApp */}
+                {whatsappLabel && (
+                  // margen mayor: el balanceo del estetoscopio empieza cuando ya se ve en pantalla
+                  <Reveal className="mt-9" rootMargin="0px 0px -170px 0px">
+                    <CoatShareButton label={whatsappLabel} message={t.shareMessage} caption={t.whatsappCaption?.trim()} />
+                  </Reveal>
+                )}
               </div>
             </div>
           </Reveal>
           <p className="mt-10 text-center font-sans text-[0.7rem] uppercase tracking-[0.3em] text-navy/40">
-            {celebrant.name} · {celebrant.age} años
+            {t.footer}
           </p>
         </section>
       </main>
@@ -232,7 +244,7 @@ function Story({ text, dropCap = false, framed = false }: { text: string; dropCa
     <div className={framed ? 'border-y border-gold/60 py-7' : ''}>
       {framed && <Sparkle className="mx-auto mb-4 h-3 w-3 text-gold" />}
       <p
-        className={`whitespace-pre-line font-serif text-[1.3rem] italic leading-relaxed text-navy/85 ${
+        className={`whitespace-pre-line font-serif text-[1.3rem] italic leading-relaxed text-navy/85 [text-wrap:pretty] ${
           dropCap
             ? 'text-left first-letter:float-left first-letter:mr-2 first-letter:font-display first-letter:text-[3.6rem] first-letter:not-italic first-letter:leading-[0.8] first-letter:text-golddeep'
             : 'text-center'
@@ -255,7 +267,7 @@ function Detail({ icon, label, value, extra }: { icon: React.ReactNode; label: s
       </dt>
       <dd className="mt-1.5 font-serif text-[1.35rem] leading-snug text-navy">
         {value}
-        {extra && <span className="mt-1 block font-sans text-sm leading-relaxed text-navy/65">{extra}</span>}
+        {extra && <span className="mt-1 block font-sans text-sm leading-relaxed text-navy/65 [text-wrap:pretty]">{extra}</span>}
       </dd>
     </div>
   )
@@ -282,7 +294,7 @@ function ShareButton({ title, text }: { title: string; text: string }) {
   }
 
   const share = async () => {
-    const url = window.location.href.split('#')[0]
+    const url = shareUrl()
     if (navigator.share) {
       try {
         await navigator.share({ title, text, url })
@@ -297,7 +309,7 @@ function ShareButton({ title, text }: { title: string; text: string }) {
   return (
     <button type="button" onClick={share} className="btn-outline">
       {copied ? <Check className="h-4 w-4" aria-hidden="true" /> : <Share2 className="h-4 w-4" aria-hidden="true" />}
-      <span aria-live="polite">{copied ? 'Enlace copiado' : 'Compartir invitación'}</span>
+      <span aria-live="polite">{copied ? 'Link copied' : 'Share invitation'}</span>
     </button>
   )
 }

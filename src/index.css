@@ -71,6 +71,28 @@
   opacity: 1;
   scale: 1;
 }
+/* Botón-bata: al aparecer, el estetoscopio se balancea un instante y queda quieto */
+@keyframes coat-settle {
+  0% {
+    transform: rotate(7deg);
+  }
+  34% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(2deg);
+  }
+  82% {
+    transform: rotate(-0.8deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.reveal.is-in > .coat-share .coat-steth {
+  transform-origin: 0 0;
+  animation: coat-settle 2.2s ease-in-out 0.35s both;
+}
 
 /* Aviso del carrusel: la flecha da un pequeño empujón hacia la derecha */
 @keyframes swipe-hint {
@@ -128,6 +150,13 @@
   .lb-zoom,
   .swipe-hint {
     animation: none;
+  }
+  .reveal.is-in > .coat-share .coat-steth {
+    animation: none;
+  }
+  .coat-share,
+  .coat-share * {
+    transition: none;
   }
 }
 

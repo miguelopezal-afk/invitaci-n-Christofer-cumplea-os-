@@ -1,7 +1,16 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 
 /** Envuelve contenido y lo hace aparecer suavemente al entrar en pantalla. */
-export function Reveal({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function Reveal({
+  children,
+  className = '',
+  rootMargin = '0px 0px -8% 0px',
+}: {
+  children: ReactNode
+  className?: string
+  /** Cuánto debe haber entrado en pantalla antes de aparecer (márgenes de IntersectionObserver). */
+  rootMargin?: string
+}) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const el = ref.current
@@ -17,11 +26,11 @@ export function Reveal({ children, className = '' }: { children: ReactNode; clas
           io.disconnect()
         }
       },
-      { rootMargin: '0px 0px -8% 0px' },
+      { rootMargin },
     )
     io.observe(el)
     return () => io.disconnect()
-  }, [])
+  }, [rootMargin])
   return (
     <div ref={ref} className={`reveal ${className}`}>
       {children}
@@ -59,7 +68,7 @@ export function WhiteCoat({ className = '' }: { className?: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       role="img"
-      aria-label="Ilustración de una bata blanca con estetoscopio"
+      aria-label="Illustration of a white coat with a stethoscope"
     >
       <g stroke="#183153" strokeWidth="1.6">
         <path

@@ -32,6 +32,22 @@ import {
 const { photos: _demo, ...baseContent } = raw as Content
 const initial: EditorState = { content: baseContent, photos: [] }
 
+/** Un borrador o ZIP anterior a la versión en inglés (sin los textos de compartir). */
+const isOld = (s: EditorState) => !s.content?.texts || !('shareTitle' in s.content.texts)
+
+/**
+ * Pone al día un borrador o ZIP guardado con una versión anterior del proyecto:
+ * conserva las fotografías y, si es anterior a la versión en inglés, toma los textos
+ * actuales; si no, solo completa los textos que aún no existían.
+ */
+const upgrade = (s: EditorState): EditorState =>
+  isOld(s)
+    ? { ...s, content: baseContent }
+    : { ...s, content: { ...s.content, texts: { ...baseContent.texts, ...s.content.texts } } }
+
+const OLD_NOTICE =
+  'Este álbum era anterior a la versión en inglés: se conservaron las fotografías y se cargaron los textos y datos actuales.'
+
 const TEXT_LABELS: Record<string, string> = {
   heroTitle: 'Portada · título',
   heroSubtitle: 'Portada · subtítulo',
@@ -53,7 +69,12 @@ const TEXT_LABELS: Record<string, string> = {
   momentClosing: 'Gran momento · cierre',
   inviteTitle: 'Invitación · título',
   inviteText: 'Invitación · texto',
+  whatsappCaption: 'Invitación · inscripción sobre la bata de WhatsApp',
+  whatsappButton: 'Invitación · botón de WhatsApp',
   inviteClosing: 'Invitación · mensaje final',
+  shareTitle: 'Compartir · título al enviar la invitación',
+  shareMessage: 'Compartir · mensaje que acompaña al enlace (también por WhatsApp)',
+  footer: 'Pie de página',
 }
 
 type Tab = 'fotos' | 'textos' | 'vista' | 'exportar'
@@ -82,7 +103,11 @@ export default function Editor() {
   // Recuperar el borrador guardado en este navegador.
   useEffect(() => {
     loadDraft()
-      .then((d) => d && setState(d))
+      .then((d) => {
+        if (!d) return
+        setState(upgrade(d))
+        if (isOld(d)) setNotice(OLD_NOTICE)
+      })
       .catch(() => {})
       .finally(() => setReady(true))
   }, [])
@@ -187,8 +212,9 @@ export default function Editor() {
     if (!file) return
     setBusy('Abriendo ZIP…')
     try {
-      setState(await importZip(file))
-      setNotice('Álbum cargado desde el ZIP.')
+      const loaded = await importZip(file)
+      setState(upgrade(loaded))
+      setNotice(isOld(loaded) ? OLD_NOTICE : 'Álbum cargado desde el ZIP.')
     } catch (e) {
       setNotice(`No se pudo abrir el ZIP: ${(e as Error).message}`)
     }
