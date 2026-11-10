@@ -6,8 +6,9 @@ const WHATSAPP =
  * Botón-ilustración: la bata blanca, dentro de un medallón, es el botón.
  * La campana del estetoscopio lleva el glifo de WhatsApp; al tocarlo se abre
  * WhatsApp con el mensaje y el enlace de la invitación listos para enviar.
+ * `caption` es una inscripción opcional que rodea el medallón por arriba, como en un sello.
  */
-export function CoatShareButton({ label, message }: { label: string; message: string }) {
+export function CoatShareButton({ label, message, caption }: { label: string; message: string; caption?: string }) {
   const url = window.location.href.split('#')[0]
 
   return (
@@ -20,17 +21,28 @@ export function CoatShareButton({ label, message }: { label: string; message: st
       <span className="relative block transition-transform duration-200 ease-out group-active:scale-[0.97]">
         {/* Sombra del medallón: lo levanta del papel y se recoge al pulsar */}
         <span
-          className="absolute inset-[0.8%] rounded-full shadow-[0_16px_28px_-16px_rgba(24,49,83,0.55)] transition-shadow duration-200 group-active:shadow-[0_6px_12px_-8px_rgba(24,49,83,0.55)]"
+          className="absolute inset-x-[0.8%] bottom-[0.7%] aspect-square rounded-full shadow-[0_16px_28px_-16px_rgba(24,49,83,0.55)] transition-shadow duration-200 group-active:shadow-[0_6px_12px_-8px_rgba(24,49,83,0.55)]"
           aria-hidden="true"
         />
         <svg
-          viewBox="-32 0 264 264"
+          viewBox={caption ? '-32 -30 264 294' : '-32 0 264 264'}
           aria-hidden="true"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="relative h-44 w-auto"
+          className={`relative w-44 ${caption ? 'h-[12.25rem]' : 'h-44'}`}
         >
+          {/* Inscripción en arco sobre el medallón */}
+          {caption && (
+            <>
+              <path id="coat-arc" d="M-42 132a142 142 0 0 1 284 0" />
+              <text className="fill-golddeep font-sans text-[15.5px] font-medium uppercase tracking-[0.3em]">
+                <textPath href="#coat-arc" startOffset="50%" textAnchor="middle">
+                  {caption}
+                </textPath>
+              </text>
+            </>
+          )}
           {/* Medallón: aro fino dorado y disco celeste */}
           <circle
             cx="100"

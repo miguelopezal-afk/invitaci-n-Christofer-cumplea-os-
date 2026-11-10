@@ -219,7 +219,7 @@ export default function Invitation({ content }: { content: Content }) {
                 {/* Sello final de la tarjeta: la bata que se envía por WhatsApp */}
                 {t.whatsappButton && (
                   <Reveal className="mt-9">
-                    <CoatShareButton label={t.whatsappButton} message={t.shareMessage} />
+                    <CoatShareButton label={t.whatsappButton} message={t.shareMessage} caption={t.whatsappCaption} />
                   </Reveal>
                 )}
               </div>
