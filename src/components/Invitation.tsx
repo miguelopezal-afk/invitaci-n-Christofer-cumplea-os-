@@ -15,6 +15,8 @@ export default function Invitation({ content }: { content: Content }) {
   const final = bySection(photos, 'final').slice(0, 1)
   // Si falta el texto (content.json antiguo) se usa el habitual; vacío o en blanco, el botón no se muestra.
   const whatsappLabel = (t.whatsappButton ?? 'Share on WhatsApp').trim()
+  // El cuento puede ir en un idioma distinto al del resto de la página (p. ej. "es").
+  const storyLang = t.storyLang?.trim() || undefined
 
   return (
     <LightboxProvider>
@@ -62,10 +64,18 @@ export default function Invitation({ content }: { content: Content }) {
         {t.story1 && (
           <section className="bg-sky/30 px-6 py-20">
             <Reveal className="mx-auto max-w-md text-center">
-              {t.storyEyebrow && <p className="font-serif text-2xl italic text-golddeep">{t.storyEyebrow}</p>}
-              {t.storyTitle && <h2 className="section-title mt-3">{t.storyTitle}</h2>}
+              {t.storyEyebrow && (
+                <p lang={storyLang} className="font-serif text-2xl italic text-golddeep">
+                  {t.storyEyebrow}
+                </p>
+              )}
+              {t.storyTitle && (
+                <h2 lang={storyLang} className="section-title mt-3">
+                  {t.storyTitle}
+                </h2>
+              )}
               <Divider className="my-7" />
-              <Story text={t.story1} dropCap />
+              <Story text={t.story1} lang={storyLang} dropCap />
             </Reveal>
           </section>
         )}
@@ -93,7 +103,7 @@ export default function Invitation({ content }: { content: Content }) {
           </Reveal>
           {t.story2 && (
             <Reveal className="mx-auto mt-12 max-w-md px-6">
-              <Story text={t.story2} framed />
+              <Story text={t.story2} lang={storyLang} framed />
             </Reveal>
           )}
 
@@ -105,7 +115,7 @@ export default function Invitation({ content }: { content: Content }) {
                 <li key={group.section}>
                   {group.story && (
                     <Reveal className="mx-auto max-w-md px-6 pb-8 pt-2">
-                      <Story text={group.story} framed />
+                      <Story text={group.story} lang={storyLang} framed />
                     </Reveal>
                   )}
                   <Reveal>
@@ -143,7 +153,7 @@ export default function Invitation({ content }: { content: Content }) {
           </Reveal>
           {t.story3 && (
             <Reveal className="mx-auto mt-14 max-w-md px-6">
-              <Story text={t.story3} framed />
+              <Story text={t.story3} lang={storyLang} framed />
             </Reveal>
           )}
           <Reveal className="mx-auto mt-12 flex max-w-sm flex-col items-center px-5 text-center">
@@ -239,11 +249,22 @@ export default function Invitation({ content }: { content: Content }) {
 }
 
 /** Pasaje del cuento, con letra capital opcional. */
-function Story({ text, dropCap = false, framed = false }: { text: string; dropCap?: boolean; framed?: boolean }) {
+function Story({
+  text,
+  lang,
+  dropCap = false,
+  framed = false,
+}: {
+  text: string
+  lang?: string
+  dropCap?: boolean
+  framed?: boolean
+}) {
   return (
     <div className={framed ? 'border-y border-gold/60 py-7' : ''}>
       {framed && <Sparkle className="mx-auto mb-4 h-3 w-3 text-gold" />}
       <p
+        lang={lang}
         className={`whitespace-pre-line font-serif text-[1.3rem] italic leading-relaxed text-navy/85 [text-wrap:pretty] ${
           dropCap
             ? 'text-left first-letter:float-left first-letter:mr-2 first-letter:font-display first-letter:text-[3.6rem] first-letter:not-italic first-letter:leading-[0.8] first-letter:text-golddeep'
