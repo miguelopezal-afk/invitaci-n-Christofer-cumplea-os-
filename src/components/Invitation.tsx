@@ -56,7 +56,7 @@ export default function Invitation({ content }: { content: Content }) {
                 <PhotoFrame photos={cover} index={0} eager caption={false} className="relative" />
               </div>
             )}
-            <p className="lead mx-auto mt-8 max-w-xs">{t.heroSubtitle}</p>
+            <p className="lead mx-auto mt-8 max-w-xs [text-wrap:balance]">{t.heroSubtitle}</p>
             <a href="#historia" className="btn-primary mt-8">
               {t.heroButton}
               <ChevronDown className="h-4 w-4" aria-hidden="true" />
@@ -291,9 +291,14 @@ function Detail({ icon, label, value, extra }: { icon: React.ReactNode; label: s
         </span>
         <span className="eyebrow">{label}</span>
       </dt>
-      <dd className="mt-1.5 font-serif text-[1.35rem] leading-snug text-navy">
+      <dd className="mt-1.5 font-serif text-[1.3rem] lining-nums leading-snug text-navy">
         {value}
-        {extra && <span className="mt-1 block font-sans text-sm leading-relaxed text-navy/65 [text-wrap:pretty]">{extra}</span>}
+        {extra && (
+          <span className="mt-1 block font-sans text-sm leading-relaxed text-navy/65 [text-wrap:balance]">
+            {/* solo al mostrarla: «de Guatemala» no se separa (la dirección también alimenta el enlace de Maps) */}
+            {extra.replace(/ de /g, ' de\u00a0')}
+          </span>
+        )}
       </dd>
     </div>
   )
