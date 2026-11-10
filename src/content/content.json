@@ -6,7 +6,7 @@
   },
   "event": {
     "type": "Birthday celebration",
-    "dateLabel": "Saturday, November 21, 2026",
+    "dateLabel": "Saturday, November\u00a021,\u00a02026",
     "time": "2:00 PM",
     "venue": "Edificio Tiffany II",
     "address": "13 Calle A 7-35, Zona 10, Guatemala City"
@@ -18,10 +18,10 @@
     "storyEyebrow": "Once upon a time…",
     "storyTitle": "This is the story of a little boy who dreamed of becoming a cardiologist",
     "story1": "Twenty-two years ago, in a kingdom ringed by volcanoes, a little boy with dark curls and a mischievous smile came into the world. He was still very small when he discovered that the kingdom’s most precious treasure was not locked away in any castle: it was beating, hidden, inside each and every person.",
-    "story2": "The boy grew up amid laughter, games, and adventures, and with every passing year his dream grew right along with him: to learn the secret language of hearts, so that he could care for them.",
-    "story3": "In time, the little dreamer set out on the path of the healers. He has studied with patience and courage, and the day is drawing near when he will receive his white coat: not a wizard’s cloak, nor a knight’s cape, but the coat of those who choose to care for others.\n\nThe tale is not over yet… the aspiring cardiologist is still writing it, heartbeat by heartbeat.",
+    "story2": "The boy grew up amid laughter, games, and adventures, and with every passing year his dream grew right along with him: to learn the secret language of hearts, so that he could care for\u00a0them.",
+    "story3": "In time, the little dreamer set out on the path of the healers. He has studied with patience and courage, and the day is drawing near when he will receive his white coat: not a wizard’s cloak, nor a knight’s cape, but the coat of those who choose to care for others.\n\nThe tale is not over yet… the aspiring cardiologist is still writing it, heartbeat\u00a0by\u00a0heartbeat.",
     "earlyTitle": "It all began with a little dreamer…",
-    "earlyText": "A story began 22 years ago, one filled with joy, special moments, and dreams only just beginning to unfold.",
+    "earlyText": "A story began 22 years ago, one filled with joy, special moments, and dreams only just starting to unfold.",
     "carouselHint": "Scroll",
     "growingTitle": "Every year, a new adventure",
     "growingText": "Through smiles, adventures, and unforgettable moments, each year helped shape the person you are today.",
@@ -30,7 +30,7 @@
     "dreamsNote": "A new chapter of his training is about to begin",
     "momentText": "From that little dreamer\nto the young man you are today…\n\n22 years of stories, lessons,\njoys, and dreams still ahead.\n\nAnd the best of your story\nis yet to be written.",
     "momentClosing": "Happy Birthday, Chrystofer!",
-    "inviteTitle": "Let’s celebrate your 22nd!",
+    "inviteTitle": "Let’s celebrate your\u00a022nd!",
     "inviteText": "We’d love for you to join us for a very special celebration, full of joy and good times.",
     "whatsappCaption": "Let’s celebrate",
     "whatsappButton": "Share on WhatsApp",
@@ -52,7 +52,7 @@
       "label": "",
       "title": "Teen years",
       "description": "",
-      "story": "The seasons came and went, and the little boy was not so little anymore. His steps grew longer, his questions bigger, and the world, which had once fit inside a playground, began to stretch out beyond the volcanoes. But in his pocket he still carried, untouched, the very same dream."
+      "story": "The seasons came and went, and the little boy was not so little anymore. His steps grew longer, his questions bigger, and the world, which had once fit inside a playground, began to stretch out beyond the volcanoes. But in his pocket he still carried, untouched, the very same\u00a0dream."
     }
   ],
   "photos": [

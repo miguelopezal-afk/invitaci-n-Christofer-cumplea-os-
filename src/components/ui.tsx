@@ -1,7 +1,16 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 
 /** Envuelve contenido y lo hace aparecer suavemente al entrar en pantalla. */
-export function Reveal({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function Reveal({
+  children,
+  className = '',
+  rootMargin = '0px 0px -8% 0px',
+}: {
+  children: ReactNode
+  className?: string
+  /** Cuánto debe haber entrado en pantalla antes de aparecer (márgenes de IntersectionObserver). */
+  rootMargin?: string
+}) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const el = ref.current
@@ -17,11 +26,11 @@ export function Reveal({ children, className = '' }: { children: ReactNode; clas
           io.disconnect()
         }
       },
-      { rootMargin: '0px 0px -8% 0px' },
+      { rootMargin },
     )
     io.observe(el)
     return () => io.disconnect()
-  }, [])
+  }, [rootMargin])
   return (
     <div ref={ref} className={`reveal ${className}`}>
       {children}
