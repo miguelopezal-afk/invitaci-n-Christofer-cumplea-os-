@@ -1,8 +1,8 @@
 {
-  "version": 4,
+  "version": 5,
   "celebrant": {
-    "name": "Chrystofer Woc",
-    "firstName": "Chrystofer",
+    "name": "Christofer Woc",
+    "firstName": "Christofer",
     "age": 22
   },
   "event": {
@@ -33,15 +33,15 @@
     "dreamsText": "Hoy, a tus 22 años, seguimos celebrando cada uno de tus pasos y todos los sueños que están por hacerse realidad.",
     "dreamsNote": "Una nueva etapa de su formación está por comenzar",
     "momentText": "De aquel pequeño soñador\nal joven que eres hoy...\n\n22 años de historias, aprendizajes,\nalegrías y sueños por cumplir.\n\nY lo mejor de tu historia\ntodavía está por escribirse.",
-    "momentClosing": "¡Feliz cumpleaños, Chrystofer!",
+    "momentClosing": "¡Feliz cumpleaños, Christofer!",
     "inviteTitle": "¡Celebremos tus 22\u00a0años!",
     "inviteText": "Queremos compartir contigo una celebración muy especial, llena de alegría y buenos momentos.",
     "whatsappCaption": "¡Celebremos!",
     "whatsappButton": "Compartir por WhatsApp",
     "inviteClosing": "¡Tu presencia hará esta celebración aún más especial!",
-    "shareTitle": "Chrystofer Woc — ¡22 años!",
-    "shareMessage": "¡Celebremos los 22 años de Chrystofer Woc! Abre la invitación aquí:",
-    "footer": "Chrystofer Woc · 22 años"
+    "shareTitle": "Christofer Woc — ¡22 años!",
+    "shareMessage": "¡Celebremos los 22 años de Christofer Woc! Abre la invitación aquí:",
+    "footer": "Christofer Woc · 22 años"
   },
   "timeline": [
     {

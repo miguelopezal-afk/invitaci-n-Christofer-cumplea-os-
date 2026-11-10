@@ -1,4 +1,4 @@
-# Chrystofer Woc — ¡22 años!
+# Christofer Woc — ¡22 años!
 
 Invitación digital de cumpleaños: una página estática (React + TypeScript + Vite + Tailwind CSS) que cuenta
 22 años de historia en fotografías y termina con la invitación a la celebración.
@@ -110,7 +110,7 @@ En *Environment Variables* define `VITE_SITE_URL` con la URL que te asigne Verce
 
 ## 9. Compartir el enlace por WhatsApp
 
-Pega la dirección de la página en un chat. WhatsApp mostrará la tarjeta de la bata con el título «Chrystofer Woc — ¡22 años!»
+Pega la dirección de la página en un chat. WhatsApp mostrará la tarjeta de la bata con el título «Christofer Woc — ¡22 años!»
 (`public/og-image.png`). Si antes compartiste el enlace y no se actualiza la vista previa, añade `?v=2` al final.
 Dentro de la invitación, el botón **Compartir invitación** abre el menú de compartir del teléfono (o copia el enlace).
 
